@@ -23,3 +23,6 @@ class Video(models.Model):
     slug = models.SlugField(max_length=200, allow_unicode=True, unique=True)
     def __str__(self):
         return "["+self.category.name+"]"+self.name
+
+class Comment(models.Model):
+    body = models.TextField()
