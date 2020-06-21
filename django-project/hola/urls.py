@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import homeT.views
+from homeT.views import VideoLoad
 
 urlpatterns = [
+    path('', VideoLoad.as_view(), name='main'),
     path('admin/', admin.site.urls),
+
 ]
