@@ -28,7 +28,37 @@ def signup(request):
             return redirect('correct')
         else:
             return redirect('uncorrect')
-    return render(request, 'signup.html')
+    return render(request, 'signup_be.html')
+
+
+
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(request, username=username, password=password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'unlog_be.html')
+    else:
+        return render(request, 'login_be.html')
+
+def unlog(request):
+    return render(request, 'unlog_be.html')
+
+
+def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('home')
+    return render(request, 'home.html')
+
+
+
+
 
 
 
