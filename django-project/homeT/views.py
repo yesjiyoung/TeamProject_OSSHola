@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+#[HS]About VideoLoad
 from django.views.generic.list import ListView
 from .models import Video
 
@@ -6,9 +7,9 @@ from .models import Video
 from django.contrib.auth.models import User  
 from django.contrib import auth  
 
-# Create your views here.
-
-
+#[HS]About post_like
+from django.views.decorators.http import require_POST
+from django.http import HttpResponse
 
 class VideoLoad(ListView):
     model = Video
@@ -18,6 +19,21 @@ class VideoLoad(ListView):
         VideoList = Video.objects.all()
         return render(request, template_name, {'VideoList':VideoList})
 
+@require_POST
+def post_like(request):
+    pk = request.POST.get('pk',None)
+    video = get_object_or_404(Video, pk=pk)
+    video_like, video_like_created = video.like_set.get_or_created(user=request.user)
+
+    if not video_like_created:
+        video_like.delete()
+        message="좋아요 취소"
+    else:
+        message = "좋아요"
+    context={'like_count':video.like_count,
+    'message': message} # 'nickname':request.user.profile.닉네임 context로 추가 예정
+
+    return HttpResponse(json.dumps(context), content_type='application/jason' #context를 json타입으로 보낸다)
 
 
 def signup(request):
