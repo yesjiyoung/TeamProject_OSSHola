@@ -21,8 +21,8 @@ class Video(models.Model):
 
 
 class Like(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
-    video = models.ForeignKey(Video)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    video = models.ForeignKey(Video, on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
 
     

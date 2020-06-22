@@ -12,11 +12,15 @@ from django.http import HttpResponse
 
 class VideoLoad(ListView):
     model = Video
-
     def get(self,request):
         template_name = 'home_be.html'
         VideoList = Video.objects.all()
         return render(request, template_name, {'VideoList':VideoList})
+
+def detail(request, detail_id):
+    detail_obj = get_object_or_404(Video, pk=detail_id)
+    return render(request, 'detail_be.html', {'detailObj':detail_obj})
+
 
 @require_POST
 def post_like(request):

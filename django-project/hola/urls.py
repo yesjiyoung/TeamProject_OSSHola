@@ -20,6 +20,7 @@ from homeT.views import VideoLoad
 
 urlpatterns = [
     path('', VideoLoad.as_view(), name='main'),
+    path('detail/<int:detail_id>', homeT.views.detail, name='detail'),
     path('admin/', admin.site.urls),
     path('signup/', homeT.views.signup, name='signup'),
     path('unlog/', homeT.views.unlog, name='unlog'),
