@@ -32,7 +32,7 @@ def post_like(request):
     context={'like_count':video.like_count,
     'message': message} # 'nickname':request.user.profile.닉네임 context로 추가 예정
 
-    return HttpResponse(json.dumps(context), content_type='application/jason' #context를 json타입으로 보낸다)
+    return HttpResponse(json.dumps(context), content_type='application/json' #context를 json타입으로 보낸다)
 
 
 def signup(request):
