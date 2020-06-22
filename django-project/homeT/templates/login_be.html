@@ -1,0 +1,12 @@
+<form class="loginform" method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div>
+        <h4>USERNAME</h4>
+        <input names="username" type="username">
+    </div>
+    <div>
+        <h4>PASSWORD</h4>
+        <input name="password" type="password">
+    </div>
+    <input type="submit" value="login">
+</form>

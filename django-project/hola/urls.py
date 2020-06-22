@@ -22,4 +22,7 @@ urlpatterns = [
     path('', VideoLoad.as_view(), name='main'),
     path('admin/', admin.site.urls),
     path('signup/', homeT.views.signup, name='signup'),
+    path('unlog/', homeT.views.unlog, name='unlog'),
+      path('login/', homeT.views.login, name='login'),
+    path('logout/', homeT.views.logout, name='logout'),
 ]
