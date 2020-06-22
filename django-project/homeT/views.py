@@ -1,5 +1,4 @@
-from django.shortcuts import render, get_object_or_404
-#[HS]About VideoLoad
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
 from .models import Video
 
@@ -40,12 +39,17 @@ def signup(request):
     if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
             user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
-            auth.login(request, user)
+            #auth.login(request, user)
             return redirect('correct')
         else:
             return redirect('uncorrect')
     return render(request, 'signup_be.html')
 
+def correct(request):
+    return render(request, 'signup_correct_be.html')
+
+def uncorrect(request):
+    return render(request, 'signup_uncorrect_be.html')
 
 
 
@@ -71,6 +75,9 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request, 'home.html')
+
+
+
 
 
 
