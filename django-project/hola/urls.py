@@ -21,5 +21,5 @@ from homeT.views import VideoLoad
 urlpatterns = [
     path('', VideoLoad.as_view(), name='main'),
     path('admin/', admin.site.urls),
-
+    path('signup/', homeT.views.signup, name='signup'),
 ]
