@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', homeT.views.signup, name='signup'),
     path('unlog/', homeT.views.unlog, name='unlog'),
-      path('login/', homeT.views.login, name='login'),
+    path('login/', homeT.views.login, name='login'),
     path('logout/', homeT.views.logout, name='logout'),
+    path('correct/', homeT.views.correct, name = 'correct'),
+    path('uncorrect/', homeT.views.uncorrect, name = 'uncorrect'),
 ]
