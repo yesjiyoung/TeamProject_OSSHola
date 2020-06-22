@@ -1,0 +1,26 @@
+<h3 class='signup'>Signup page</h3>
+    
+
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <!-- username -->
+    <div>
+        <h1>USERNAME</h1>
+        <input name="username" type="username" class="signup_form">  
+    </div>
+
+    <!-- password1 -->
+    <div>
+        <h1>PASSWORD</h1>
+        <input name="password1" type="password" class="signup_form">  
+    </div>
+
+    <!-- password2 -->
+    <div>
+        <h1>CHECK THE PASSWORD</h1>
+        <input name="password2" type="password" class="signup_form"> 
+    </div>
+
+    <input type="submit" value="GO">
+
+</form>
