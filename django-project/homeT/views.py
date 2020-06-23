@@ -3,7 +3,7 @@ from django.views.generic.list import ListView
 from .models import Video
 
 #[JY]About User 
-from djaontrib.auth.models import User  
+from django.contrib.auth.models import User  
 from django.contrib import auth  
 
 # Create your views here.
