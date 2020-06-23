@@ -65,7 +65,7 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('home')
+            return redirect('main')
         else:
             return render(request, 'unlog_be.html')
     else:
@@ -80,6 +80,9 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request, 'home.html')
+
+
+
 
 
 
