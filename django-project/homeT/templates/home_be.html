@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>메인 페이지입니다</h1>
     {% for video in VideoList %}
         <a href="{% url 'detail' video.id %}">{{video.title}}</a>
         
