@@ -4,20 +4,40 @@ from .models import Video
 
 #[JY]About User 
 from django.contrib.auth.models import User  
-from django.contrib import auth  
+from django.contrib import auth, messages #messages for video_like
 
-# Create your views here.
-
-
+#[HS]About video_like
+from django.views.decorators.http import require_POST
+from django.http import HttpResponse
+import json
 
 class VideoLoad(ListView):
     model = Video
-
     def get(self,request):
         template_name = 'home_be.html'
         VideoList = Video.objects.all()
         return render(request, template_name, {'VideoList':VideoList})
 
+def detail(request, detail_id):
+    detail_obj = get_object_or_404(Video, pk=detail_id)
+    return render(request, 'detail_be.html', {'detailObj':detail_obj})
+
+
+@require_POST
+def video_like(request):
+    pk = request.POST.get('pk',None)
+    video = get_object_or_404(Video, pk=pk)
+    video_like, video_like_created = video.like_set.get_or_created(user=request.user)
+
+    if not video_like_created:
+        video_like.delete()
+        message="좋아요 취소"
+    else:
+        message = "좋아요"
+    context={'like_count':video.like_count,
+    'message': message} # 'nickname':request.user.profile.닉네임 context로 추가 예정
+
+    return HttpResponse(json.dumps(context), content_type='application/json') #context를 json타입으로 보낸다)
 
 
 def signup(request):
@@ -60,6 +80,7 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request, 'home.html')
+
 
 
 

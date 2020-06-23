@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import homeT.views
-from homeT.views import VideoLoad
+from homeT.views import VideoLoad, video_like,detail
 
 urlpatterns = [
     path('', VideoLoad.as_view(), name='main'),
+    path('detail/<int:detail_id>', homeT.views.detail, name='detail'),
+    path('detail/$', homeT.views.video_like, name='video_like'),
     path('admin/', admin.site.urls),
     path('signup/', homeT.views.signup, name='signup'),
     path('unlog/', homeT.views.unlog, name='unlog'),
