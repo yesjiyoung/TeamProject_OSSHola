@@ -23,7 +23,7 @@ def detail(request, detail_id):
 
 
 @require_POST
-def post_like(request):
+def video_like(request):
     pk = request.POST.get('pk',None)
     video = get_object_or_404(Video, pk=pk)
     video_like, video_like_created = video.like_set.get_or_created(user=request.user)
