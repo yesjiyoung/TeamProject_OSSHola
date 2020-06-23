@@ -27,7 +27,7 @@ def detail(request, detail_id):
 def video_like(request):
     pk = request.POST.get('pk',None)
     video = get_object_or_404(Video, pk=pk)
-    video_like, video_like_created = video.like_set.get_or_created(user=request.user)
+    video_like, video_like_created = video.like_set.get_or_create(user=request.user)
 
     if not video_like_created:
         video_like.delete()
