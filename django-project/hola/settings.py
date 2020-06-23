@@ -122,3 +122,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+
+#[JY]About User Model
+AUTH_USER_MODEL = 'homeT.User'
+

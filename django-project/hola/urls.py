@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 import homeT.views
+#[JY] User Model 작업때문에 잠시 주석처리합니다. -> 다시 살림
 from homeT.views import VideoLoad, video_like,detail
 
 urlpatterns = [
