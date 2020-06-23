@@ -1,6 +1,32 @@
 from django.conf import settings
 from django.db import models
-        
+
+#[JY]About User Model
+from django.contrib.auth.models import AbstractUser
+
+class WorkOutCategory(models.Model) :
+    categorys = models.CharField(max_length = 20, unique = True)
+
+    def __str__(self):
+        return self.categorys
+
+class AgeCategory(models.Model) :
+    categorys = models.CharField(max_length = 20, unique = True)
+
+    def __str__(self):
+        return self.categorys
+
+class User(AbstractUser):
+    nickname = models.TextField(blank=True, null=True)
+    age = models.ForeignKey(AgeCategory, on_delete=models.CASCADE, null=True)
+    workingout = models.ForeignKey(WorkOutCategory, on_delete=models.CASCADE, null=True)
+
+
+
+
+
+
+# [JY] User Model 작업때문에 잠시 주석처리합니다.-> 다시 살림
 class Video(models.Model):
     title = models.CharField(max_length=200)
     # description = models.TextField(blank=True, null=True)
