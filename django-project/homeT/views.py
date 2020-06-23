@@ -4,11 +4,12 @@ from .models import Video
 
 #[JY]About User 
 from django.contrib.auth.models import User  
-from django.contrib import auth  
+from django.contrib import auth, messages #messages for video_like
 
-#[HS]About post_like
+#[HS]About video_like
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse
+import json
 
 class VideoLoad(ListView):
     model = Video
