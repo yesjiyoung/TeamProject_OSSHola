@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="color:cornflowerblue; text-align:center">
+<h1 class='login'>로그인</h1></div>
+    
+
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <!-- username -->
+      <div>
+        <h3>아이디</h3> <input name="username" type="username" class="login_form">  
+      </div>
+
+      <!-- password -->
+      <div>
+        <h3>비밀번호</h3> <input name="password" type="password" class="login_form">  
+      </div>
+
+    
+      <div>
+          <button type="button" onclick="location.href='home.html'">로그인</button></div>
+      <div>
+        <button type="button" onclick="location.href='signup'">회원가입</button></div>
+       
+{% endblock %}
