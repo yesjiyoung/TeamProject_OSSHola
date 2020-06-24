@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
+from django.urls import reverse
 
 from .models import Video
 #[JY]About User 
@@ -11,7 +12,7 @@ User = get_user_model()
 
 # [HS]About video_like
 from django.views.decorators.http import require_POST
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 import json
 
 #[JY]About comment
@@ -36,13 +37,17 @@ def detail(request, detail_id):
     detail_obj = get_object_or_404(Video, pk=detail_id)
 
     if request.method == "POST":
-        comment_form = CommentForm(request.POST)
-        comment_form.instance.user_id = request.user.id
-        comment_form.instance.v_id = v_id
+        comment_form = CommentForm(request.POST or None)
+        #comment_form.instance.user_id = request.user.id
+        #comment_form.instance.v_id = v_id
 
         if comment_form.is_valid():
-            comment = comment_form.save()
-
+            #comment = comment_form.save()
+            content = request.POST.get('content')
+            comment = Comment.objects.create(video=detail_obj, user=request.user, content=content)
+            comment.save()
+            return HttpResponseRedirect(reverse('detail', args=(detail_obj.id,)))
+            #return redirect('detail')
 
     comment_form = CommentForm()
     comments = detail_obj.comments.all()
@@ -105,11 +110,11 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('main')
+            return redirect('home')
         else:
-            return render(request, 'unlog.html')
+            return render(request, 'unlog_be.html')
     else:
-        return render(request, 'login.html')
+        return render(request, 'login_be.html')
 
 def unlog(request):
     return render(request, 'unlog.html')
@@ -120,6 +125,8 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request, 'home.html')
+
+
 
 
 
