@@ -8,9 +8,11 @@
                     <!--PART1 인공지능으로 운동 배우기-->
                     <div style="border:1px solid #2C3E50"class="cate">
                         <div>
-                            {% for tag in TagList %}
-                                {{tag.name}}
-                            {% endfor %}
+                            <!-- {% for tag in TagList %}
+                                {% if tag.name == '힙' %}
+                                    {{tag.name}}
+                                {% endif %}
+                            {% endfor %} -->
                         </div>
                         <div class="cate_name">
                             <h3>인공지능으로 운동 배우기</h3>
@@ -19,13 +21,12 @@
 
                         <div class="cate_box">
                             {% for video in VideoList %}
-                            <a href="{% url 'detail' video.id %}">{{video.title}}</a>
-                            <br>
-                            <iframe width="871" height="490" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                                
-                        {% endfor %}
-                    
+                                {% if video.tag == "인공지능운동" %}
+                                    <a href="{% url 'detail' video.id %}">{{video.title}}</a>
+                                    <br>
+                                    <iframe width="871" height="490" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                {% endif %}
+                            {% endfor %}
                         </div>
 
                     </div>

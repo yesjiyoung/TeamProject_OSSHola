@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
 # [JY] User Model 작업때문에 잠시 주석처리합니다.
-from .models import Video, Tag
+from .models import Video
 
 #[JY]About User 
 from django.contrib.auth.models import User  
@@ -20,8 +20,7 @@ class VideoLoad(ListView):
     def get(self,request):
         template_name = 'home.html'
         VideoList = Video.objects.all()
-        TagList = Tag.objects.all()
-        return render(request, template_name, {'VideoList':VideoList, 'TagList':TagList})
+        return render(request, template_name, {'VideoList':VideoList})
 
 def detail(request, detail_id):
     detail_obj = get_object_or_404(Video, pk=detail_id)

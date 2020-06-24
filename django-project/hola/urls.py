@@ -31,5 +31,5 @@ urlpatterns = [
     path('logout/', homeT.views.logout, name='logout'),
     path('correct/', homeT.views.correct, name = 'correct'),
     path('uncorrect/', homeT.views.uncorrect, name = 'uncorrect'),
-
+    
 ]
