@@ -46,7 +46,6 @@ def video_like(request):
 
     return HttpResponse(json.dumps(context), content_type='application/json') #context를 json타입으로 보낸다)
 
-
 def signup(request):
     if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
@@ -94,6 +93,9 @@ def logout(request):
         return redirect('home')
     return render(request, 'home.html')
 
+
+def home(request):
+    return render(request, 'home.html')
 
 
 
