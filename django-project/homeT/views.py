@@ -29,8 +29,9 @@ class AiLoad(ListView):
     model=Video
     def get(self, request):
         template_name='ai_home.html'
-        VideoList = Video.objects.all()
-        return render(request, template_name, {'VideoList':VideoList})
+        AIList = Video.objects.filter(tag="인공지능운동")
+
+        return render(request, template_name, {'AIList':AIList})
 
 def detail(request, detail_id):
     detail_obj = get_object_or_404(Video, pk=detail_id)
