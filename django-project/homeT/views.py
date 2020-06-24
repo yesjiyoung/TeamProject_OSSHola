@@ -49,6 +49,9 @@ def detail(request, detail_id):
 
     return render(request, 'detail_be.html', {'detailObj':detail_obj, "comments":comments, "comment_form":comment_form})
 
+def ai_detail(request, ai_detail_id):
+    detail_ai_obj = get_object_or_404(Video, pk=ai_detail_id)
+    return render(request, 'Ai_detail.html', {'detail_ai_obj':detail_ai_obj})
 
 @require_POST
 def video_like(request):

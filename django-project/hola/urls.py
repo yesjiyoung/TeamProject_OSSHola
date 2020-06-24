@@ -32,5 +32,5 @@ urlpatterns = [
     path('correct/', homeT.views.correct, name = 'correct'),
     path('uncorrect/', homeT.views.uncorrect, name = 'uncorrect'),
     path('aiHome/',AiLoad.as_view(), name='aiHome'),
-    
+    path('aidetail/<int:ai_detail_id>', homeT.views.ai_detail,name='aiDetail')
 ]
