@@ -1,0 +1,147 @@
+.right_part{
+    display: flex;
+    flex-direction: row;
+}
+
+/* .info_part{
+    width: 50%;
+    display: fle;
+} */
+
+.main_video{
+    /* display: flex; */
+    /* flex-direction: column; */
+    float: left;
+
+
+}
+.cam_video{
+    /* display: flex; */
+    float: left;
+    width: 600px;
+    height: 600px;
+    /* margin-left: 10px; */
+    background-color: royalblue;
+    /* text-align: center; */
+}
+
+/* 오른쪽 전체 파트 */
+.right_part{
+    /* justify-content: center; */
+    /* flex-direction: row; */
+    width: 900px;
+    height: calc(100%-110px);
+    width: 50%;
+    /* margin: 15px 0 0 70px ; */
+    /* overflow-y: scroll; */
+}
+/* --> */
+
+/* 메인비디오 파트 */
+.main_video_info{
+    display: flex;}
+.main_video_chan {
+    flex:1;
+    /* border: 1px solid black; */
+}
+.main_video_title{
+    flex-direction: row;
+    width: 682.86px;
+    border: 1px solid black;
+}
+.main_video_title p{
+    /* position: relative;
+    top: -500px;
+    left: 50px; */
+    width: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* .heart{
+    flex: 1;
+    /* border: 1px solid black; 
+} */
+
+/* .mypick{
+    background: url(../image/heart.png) no-repeat;
+    background-size:100%;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    border: 0;
+    padding: 0;
+    margin: 10px 26px;
+} */
+
+
+.function{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    
+}
+
+.watch{    
+    background-color: #8b79af;
+    border-radius: 70px;
+    margin-bottom:52px;
+    padding: 0;
+    border-radius: 1px solid black;
+    
+}
+.watch table {
+    /* background-color: #8b79af; 
+    border-radius: 70px;  */
+    width: 439px; 
+    height: 160px;
+}
+
+td{
+    padding: 0;
+    margin: 0;
+}
+
+.start{
+    background: url(../image/play-button.png) no-repeat;
+}
+.pause{
+    background: url(../image/pause.png) no-repeat;
+}
+.reset{
+    background: url(../image/replay.png) no-repeat;
+}
+.save{
+    background: url(../image/save.png) no-repeat;
+}
+
+ /* background-size: 100%; 
+    input 사이즈에 맞추어서 이미지 크기도 자동 조정되는 css코드 */
+
+.pick{
+    background-color: indianred;
+    border:none;
+    border-radius: 10px;
+    color: ivory;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.add_plan{
+    background-color: cornflowerblue;
+    border:none;
+    border-radius: 10px;
+    color: ivory;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
