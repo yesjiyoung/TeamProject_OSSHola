@@ -72,13 +72,13 @@ def detail(request, detail_id):
             content = request.POST.get('content')
             comment = Comment.objects.create(video=detail_obj, user=request.user, content=content)
             comment.save()
-            return HttpResponseRedirect(reverse('detail', args=(detail_obj.id)))
+            return HttpResponseRedirect(reverse('detail', args=(detail_obj.id,)))
             #return redirect('detail')
 
     comment_form = CommentForm()
     comments = detail_obj.comments.all()
 
-    return render(request, 'detail_be.html', {'detailObj':detail_obj, "comments":comments, "comment_form":comment_form})
+    return render(request, 'detail.html', {'detailObj':detail_obj, "comments":comments, "comment_form":comment_form})
 
 def ai_detail(request, ai_detail_id):
     detail_ai_obj = get_object_or_404(Video, pk=ai_detail_id)
