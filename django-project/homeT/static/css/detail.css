@@ -1,0 +1,73 @@
+/* 오른쪽 전체 파트 */
+.detail_right_part{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: row;
+    /* width: 900px; */
+    height: calc(100%-110px);
+    width: 100%;
+    margin: 15px 0 0 70px ;
+    overflow-y: scroll;
+}
+
+.main_video_box{
+    display: flex;
+    flex-direction: column;
+}
+
+/* 메인비디오 파트 */
+.main_video_info{
+    width: 100%;
+    display: flex;
+}
+.main_video_chan {
+    flex:1;
+    /* border: 1px solid black; */
+}
+.main_video_title{
+    width: 682.86px;
+    /* border: 1px solid black; */
+}
+.main_video_title p{
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.heart{
+    flex: 1;
+    /* border: 1px solid black; */
+}
+.like-button{
+    background: url(../image/blank_heart2.png) no-repeat;
+    background-size:100%;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    border: 0;
+    padding: 0;
+    margin: 10px 26px;
+}
+.active{
+    background: url(../image/full_heart.png) no-repeat;
+    background-size:100%;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    border: 0;
+    padding: 0;
+    margin: 10px 26px;
+}
+.heart_count{
+    font-size: 20px;
+}
+
+.recc_video{
+    display: flex;
+    flex-direction: column;
+    border: 10px solid rgb(143, 195, 219);
+    padding: 10px 10px;
+    margin-right: 10px;
+}
