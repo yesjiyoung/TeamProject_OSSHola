@@ -1,50 +1,71 @@
 {% extends 'base.html' %}
 
 {% block content %}
-                <!--오른쪽 부분-->
-                <div class="right_part">
+<!--오른쪽 부분-->
 
-                    <hr width="100%" size="0.5" color="#c7c7c7">
-                    <!--PART1 인공지능으로 운동 배우기-->
-                    <div style="border:1px solid #2C3E50"class="cate">
-                        <div>
-                            <!-- {% for tag in TagList %}
-                                {% if tag.name == '힙' %}
-                                    {{tag.name}}
-                                {% endif %}
-                            {% endfor %} -->
-                        </div>
-                        <div class="cate_name">
-                            <h3>인공지능으로 운동 배우기</h3>
-                        </div>
+<div class="right_part">
+    <div class="row-box cate_name">
+        <h3>인공지능과 함께 운동하기</h3>
+    </div>
+    <div class="row-box">
+        {% for aiVideo in AIList %}
+        <div class=item>
+            <div class="video_thumbnail">
+                <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{aiVideo.v_id}}" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video_title">
+                <p>{{aiVideo.title}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <div class="row-box cate_name">
+        <h3>인기 동영상</h3>
+    </div>
+    <div class="row-box">
+        {% for video in VideoList|slice:":4" %}
+        <div class=item>
+            <div class="video_thumbnail">
+                <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video_title">
+                <p>{{video.title}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
-                        <div class="cate_box">
-                            {% for video in VideoList %}
-                                {% if video.tag == "인공지능운동" %}
-                                    <a href="{% url 'detail' video.id %}">{{video.title}}</a>
-                                    <br>
-                                    <iframe width="871" height="490" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-
-                    </div>
-                    <hr width="100%" size="0.5" color="#c7c7c7">
+</div>
 
 
-                    <hr width="100%" size="0.5" color="#c7c7c7">
-                    <!--PART2 인기 동영상-->
-                    <div style="border:1px solid #2C3E50" class="cate">
 
-                        <div class="cate_name">
-                            <h3>인기 동영상</h3>
-                        </div>
+<!-- <div class="right_part">
 
-                        <div class="cate_box">
-                        </div>
+    <div class="row_box cate_name">
+        <h3>인공지능으로 운동 배우기</h3>
+    </div>
+    <div class="row_box">
+        {% for aiVideo in AIList %}
+        <div id="item">
+            <a href="{% url 'detail' aiVideo.id %}">
+            <div class="video">
+                <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{aiVideo.v_id}}" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="video_title">
+                <p>{{aiVideo.title}}</p>
+            </div>
+        </a>
+        </div>
+        {% endfor %}
+    </div>
+</div> -->
 
-                    </div>
-                    <hr width="100%" size="0.5" color="#c7c7c7">
 
-                </div>
 {% endblock %}

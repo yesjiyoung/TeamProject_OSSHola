@@ -19,12 +19,15 @@ import json
 from .models import Comment
 from .forms import *
 
+
 class VideoLoad(ListView):
-    model = Video
-    def get(self,request):
-        template_name = 'home.html'
+    model=Video
+    def get(self, request):
+        template_name='home.html'
+        AIList = Video.objects.filter(tag="인공지능운동")
         VideoList = Video.objects.all()
-        return render(request, template_name, {'VideoList':VideoList})
+        return render(request, template_name, {'AIList':AIList, 'VideoList':VideoList})
+
 
 class AiLoad(ListView):
     model=Video
@@ -47,7 +50,7 @@ def detail(request, detail_id):
             content = request.POST.get('content')
             comment = Comment.objects.create(video=detail_obj, user=request.user, content=content)
             comment.save()
-            return HttpResponseRedirect(reverse('detail', args=(detail_obj.id,)))
+            return HttpResponseRedirect(reverse('detail', args=(detail_obj.id)))
             #return redirect('detail')
 
     comment_form = CommentForm()
