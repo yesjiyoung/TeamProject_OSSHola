@@ -8,58 +8,434 @@
         <div id="category_menu" style="font-family:'a옛날목욕탕L'">
             <ul>
                 <li class="UpperList">#상체</li>
-                <li class="parts">#어깨</li>
-                <li class="genre">#가슴</li>
-                <li class="level">#팔</li>
-                <li class="trend">#복부</li>
-                <li class="diet">#하체</li>
-                <li class="howto">#다리</li>
-                <li class="howto">#엉덩이</li>
-                <li class="howto">#댄스</li>
-                <li class="howto">#스트레칭</li>
+                <li class="SList">#어깨</li>
+                <li class="ChestList">#가슴</li>
+                <li class="AList">#팔</li>
+                <li class="StomachList">#복부</li>
+                <li class="LowerList">#하체</li>
+                <li class="LList">#다리</li>
+                <li class="HipList">#엉덩이</li>
+                <li class="DanceList">#댄스</li>
+                <li class="StretchList">#스트레칭</li>
             </ul>
         </div>
     </div>
-    <!-- 상체 -->
-    <div class="UpperList">
-        <div class="p-row-box">
-            {% for video in UpperList %}
-            <!--|slice:":4"-->
-            <div class=p-item>
-                <a href="{% url 'detail' video.id %}">
-                    <div class="p-video">
-                        <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="p-video_title">
-                        <p>{{video.title|truncatechars_html:40}}</p>
-                    </div>
-                </a>
+
+    <div class="p-video-box">
+        <!-- 상체 -->
+        <div class="cate" id="UpperList">
+            <div class="p-row-box">
+                {% for video in UpperList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
-        <div class="p-row-box">
-            {% for video in UpperList %}
-            <!--|slice:"4:"-->
-            <div class=p-item>
-                <a href="{% url 'detail' video.id %}">
-                    <div class="p-video">
-                        <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="p-video_title">
-                        <p>{{video.title|truncatechars_html:40}}</p>
-                    </div>
-                </a>
+            <div class="p-row-box">
+                {% for video in UpperList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
+        <!-- 끝 -->
+
+        <!-- 어깨 -->
+        <div class="cate" id="SList">
+            <div class="p-row-box">
+                {% for video in SList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in SList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+
+        <!-- 가슴 -->
+        <div class="cate" id="ChestList">
+            <div class="p-row-box">
+                {% for video in ChestList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in ChestList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+
+        <!-- 팔 -->
+        <div class="cate" id="AList">
+            <div class="p-row-box">
+                {% for video in AList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in AList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+
+        <!-- 어깨 -->
+        <div class="cate" id="StomachList">
+            <div class="p-row-box">
+                {% for video in StomachList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in StomachList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+
+        <!-- 하체 -->
+        <div class="cate" id="LowerList">
+            <div class="p-row-box">
+                {% for video in LowerList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in LowerList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+        <!-- 다리 -->
+        <div class="cate" id="LList">
+            <div class="p-row-box">
+                {% for video in LList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in LList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+        <!-- 엉덩이 -->
+        <div class="cate" id="HipList">
+            <div class="p-row-box">
+                {% for video in HipList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in HipList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+        <!-- 다이어트댄스 -->
+        <div class="cate" id="DanceList">
+            <div class="p-row-box">
+                {% for video in DanceList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in DanceList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+        <!-- 스트레칭 -->
+        <div class="cate" id="StretchList">
+            <div class="p-row-box">
+                {% for video in StretchList %}
+                <!--|slice:":4"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="p-row-box">
+                {% for video in StretchList %}
+                <!--|slice:"4:"-->
+                <div class=p-item>
+                    <a href="{% url 'detail' video.id %}">
+                        <div class="p-video">
+                            <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="p-video_title">
+                            <p>{{video.title|truncatechars_html:40}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- 끝 -->
+
+
+
+
+
+
+
+
     </div>
-    <!-- 끝 -->
 
 </div>
 
@@ -75,14 +451,55 @@
     // });
 
     $(document).ready(function () {
-        // # 처음 시작 세팅을 강제 클릭으로 만들게요
-        // --끝
         $('#category_menu ul li').click(function () {
+            $('.cate').css('display', 'none');
+            var selected = $(this).attr('class');
             $(this).addClass('top_on').siblings().removeClass('top_on');
-            // $("[class*='UpperList'").
-        });
 
-        //top_on 클래스가 있으면 show, 아니면 hidden
+            if (selected == "UpperList") {
+                var target = $('.p-video-box').find('#UpperList');
+                target.css('display', 'block');
+            }
+            else if (selected == "SList") {
+                var target = $('.p-video-box').find('#SList');
+                target.css('display', 'block');
+            }
+            else if (selected == "ChestList") {
+                var target = $('.p-video-box').find('#ChestList');
+                target.css('display', 'block');
+            }
+            else if (selected == "AList") {
+                var target = $('.p-video-box').find('#AList');
+                target.css('display', 'block');
+            }
+            else if (selected == "StomachList") {
+                var target = $('.p-video-box').find('#StomachList');
+                target.css('display', 'block');
+            }
+            else if (selected == "LowerList") {
+                var target = $('.p-video-box').find('#LowerList');
+                target.css('display', 'block');
+            }
+            else if (selected == "LList") {
+                var target = $('.p-video-box').find('#LList');
+                target.css('display', 'block');
+            }
+            else if (selected == "HipList") {
+                var target = $('.p-video-box').find('#HipList');
+                target.css('display', 'block');
+            }
+            else if (selected == "DanceList") {
+                var target = $('.p-video-box').find('#DanceList');
+                target.css('display', 'block');
+            }
+            else if (selected == "StretchList") {
+                var target = $('.p-video-box').find('#StretchList');
+                target.css('display', 'block');
+            }
+
+
+
+        });
     });
 
 </script>

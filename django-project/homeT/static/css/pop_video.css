@@ -74,3 +74,10 @@
     margin: 0;
     color: red;
 }
+
+.cate{
+    display: none;
+}
+/* #SList{
+    display:none;
+} */
