@@ -73,19 +73,11 @@ class Like(models.Model):
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
     created_at=models.DateTimeField(auto_now_add=True)
 
-<<<<<<< HEAD
-# class Tags(models.Model):
-#     name = models.ForeignKey(Video, on_delete=models.CASCADE)
-#     # name = models.CharField(max_length=140, unique=True)
-    
+# class Tag(models.Model):
+#     name = models.CharField(max_length=140, unique=True)
+
 #     def __str__(self):
 #         return self.name
-=======
-class Tag(models.Model):
-    name = models.CharField(max_length=140, unique=True)
-
-    def __str__(self):
-        return self.name
 
 
 class Comment(models.Model):
@@ -96,4 +88,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return '{}.{}'.format(self.video.title, str(self.user.username))
->>>>>>> issue/53

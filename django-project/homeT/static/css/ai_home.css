@@ -1,0 +1,12 @@
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.row-box{
+    display: flex;
+    flex-direction: row;
+}
+.item{
+    border: 1px black solid;
+    margin-right: 10px;
+}
