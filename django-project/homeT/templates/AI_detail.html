@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- AI_detail.css 사용 -->
+
+<!-- 보고 배울 영상 나올 부분-->
+<div class="right_part">
+    <div class="main_video">
+        <iframe width="956" height="538" src="https://www.youtube.com/embed/{{ url }}" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    <!-- 노트북 내장 카메라 연결한 영상 나올 부분-->
+    <div class="right_part"></div>
+    <div class="cam_video"></div>
+
+    <!-- <div class="info_part"> -->
+        <span class="main_video_info">
+            <span><class="main_video_chan">
+                <!-- 영상 채널 프로필사진 -->
+            </span>
+            
+            <span class="main_video_title">
+                <p><h3>영상 제목이 나와야 할 부분</h3></p>
+                <!-- 유투브의 {url}의 제목과 연결되어야 하는 부분 같아서 우선 임의로 이렇게 두었습니다 -->
+            </span>
+
+            <!-- 좋아요 버튼 -->
+            <div class="pick">
+                <button type="button" name="pick" class="mypick" onclick="mypcik()">찜</button>
+            </div>
+            <!-- 일정 추가 버튼 -->
+            <div class="add_plan">
+                <button type="button" name="add_plan" class="add_plan" onclick="plan_mypage()">plan</button>>
+
+        </span>
+    </div>
+
+        <!-- <div class="comment">
+        나중에 댓글기능 구현하면 추가
+        </div> -->
+
+</div>
+</script>
+
+{% endblock %}
