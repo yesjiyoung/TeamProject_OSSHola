@@ -1,8 +1,7 @@
 from django.contrib import admin
 
 #[JY] User Model 작업때문에 잠시 주석처리합니다.-> 다시 살림
-from .models import Video, Like, Tag
-
+from .models import Video, Like, Category
 # Register your models here.
 admin.site.register(Video)
 
@@ -26,4 +25,4 @@ class TagAdmin(admin.ModelAdmin):
 admin.site.register(User, CustomUserAdmin)
 admin.site.register(WorkOutCategory)
 admin.site.register(AgeCategory)
-admin.site.register(Tag)
+admin.site.register(Category)
