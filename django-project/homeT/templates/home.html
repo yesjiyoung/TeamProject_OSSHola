@@ -14,7 +14,14 @@
 
 
                         <div class="cate_box">
+                            {% for video in VideoList %}
+                            <a href="{% url 'detail' video.id %}">{{video.title}}</a>
+                            <br>
+                            <iframe width="871" height="490" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+                                
+                        {% endfor %}
+                    
                         </div>
 
                     </div>
