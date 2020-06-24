@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{%block title %}-CATE{% endblock %}
+{% block content %}
+
+
+
+<div>
+
+    <div id="bottom_category" style="font-family:'a옛날목욕탕L'">
+
+        <div class="video_Box">
+            <div class="place_sub1_video">
+
+                <div class="cate_box">
+
+                    <div id="video">
+
+                        <div class="video_thumnail">
+
+                            <a href="https://youtu.be/9WhpAVOSyl8"><img
+                                    src="http://i.ytimg.com/vi/9WhpAVOSyl8/maxresdefault.jpg" alt="운동영상"></a>
+
+                        </div>
+                        <div class="video_title">
+                            <p>스쿼트<br>
+                                feat.허벅지, 엉덩이</p>
+                            <!--그 후에는 ...으로 줄여주세요~ -->
+                        </div>
+                    </div>
+
+                    <div id="video">
+                        <div class="video_thumnail">
+                            <a href="https://youtu.be/v54Jtmi2BwU"><img
+                                    src="http://i.ytimg.com/vi/v54Jtmi2BwU/maxresdefault.jpg" alt="운동영상"></a>
+                        </div>
+                        <div class="video_title">
+                            <p>플랭크<br>
+                                feat.기초근력, 코어힘 기르기</p>
+                        </div>
+                    </div>
+
+                    <div id="video">
+                        <div class="video_thumnail">
+                            <a href="https://youtu.be/CaT6kHxngJE"><img
+                                    src="http://i.ytimg.com/vi/CaT6kHxngJE/maxresdefault.jpg" alt="운동영상"></a>
+                        </div>
+                        <div class="video_title">
+                            <p>런지<br>
+                                feat. 중둔근 강화, 힙업, 하체다이어트</p>
+                        </div>
+                    </div>
+
+                    <div id="video">
+                        <div class="video_thumnail">
+                            <a href="https://youtu.be/1s1DGaSVQC8"><img
+                                    src="http://i.ytimg.com/vi/1s1DGaSVQC8/maxresdefault.jpg" alt="운동영상"></a>
+                        </div>
+                        <div class="video_title">
+                            <p>푸쉬업<br>
+                                푸쉬업 정자세 100개</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+</div>
+</div>
+
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script>
+
+    // $(function() {
+    //     $(window).load(function() {
+    //         $(".place").trigger("click");
+    //         $(".place_sub1").trigger("click");
+    //     });
+
+    // });
+
+    $(document).ready(function () {
+        // # 처음 시작 세팅을 강제 클릭으로 만들게요
+        // --끝
+
+
+
+
+        $('#category_menu ul li').click(function () {
+            $(this).addClass('top_on').siblings().removeClass('top_on');
+        });
+        $('#bottom_category ul li').click(function () {
+            $(this).addClass('sub_on').siblings().removeClass('sub_on');
+        });
+
+        // # 장소
+        $('.place').click(function () {
+            // $(this).addClass('top_on').siblings().removeClass('top_on');
+            $('.place_sub').show().siblings().hide();
+        });
+        $('.place_sub1').click(function () {
+            $('.place_sub1_video').show().siblings().hide();
+        });
+        $('.place_sub2').click(function () {
+            $('.place_sub2_video').show().siblings().hide();
+        });
+        $('.place_sub3').click(function () {
+            $('.place_sub3_video').show().siblings().hide();
+        });
+
+
+    });
+
+</script>
+
+
+{% endblock %}
