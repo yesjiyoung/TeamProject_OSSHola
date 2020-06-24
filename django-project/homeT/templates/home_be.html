@@ -9,8 +9,9 @@
     <h1>메인 페이지입니다</h1>
     {% for video in VideoList %}
         <a href="{% url 'detail' video.id %}">{{video.title}}</a>
-        
         <iframe width="871" height="490" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <Br>
+            
     {% endfor %}
 </body>
 </html>

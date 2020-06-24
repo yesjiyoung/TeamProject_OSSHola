@@ -21,8 +21,7 @@ import homeT.views
 from homeT.views import VideoLoad, video_like,detail
 
 urlpatterns = [
-    #path('', VideoLoad.as_view(), name='main'),
-    path('', homeT.views.home, name='home'),
+    path('', VideoLoad.as_view(), name='home'),
     path('detail/<int:detail_id>', homeT.views.detail, name='detail'),
     path('detail/$', homeT.views.video_like, name='video_like'),
     path('admin/', admin.site.urls),
@@ -32,4 +31,5 @@ urlpatterns = [
     path('logout/', homeT.views.logout, name='logout'),
     path('correct/', homeT.views.correct, name = 'correct'),
     path('uncorrect/', homeT.views.uncorrect, name = 'uncorrect'),
+
 ]

@@ -18,7 +18,7 @@ import json
 class VideoLoad(ListView):
     model = Video
     def get(self,request):
-        template_name = 'home_be.html'
+        template_name = 'home.html'
         VideoList = Video.objects.all()
         return render(request, template_name, {'VideoList':VideoList})
 
@@ -32,11 +32,14 @@ def video_like(request):
     pk = request.POST.get('pk',None)
     video = get_object_or_404(Video, pk=pk)
     video_like, video_like_created = video.like_set.get_or_create(user=request.user)
-
+    # get_or_create는 (꺼내려는 모델의 인스턴스, boolean flag)를 튜플 형식으로 반환한다.
+    
     if not video_like_created:
+        # video_like_created가 FALSE일때, 기존 DB에 이미 인스턴스가 있는 상태니까 이미 눌러진 좋아요를 삭제한다.
         video_like.delete()
         message="좋아요 취소"
     else:
+        # video_like_created가 TRUE일때, 좋아요 상태가 아니었고, 좋아요를 할거다.
         message = "좋아요"
     context={'like_count':video.like_count,
     'message': message} # 'nickname':request.user.profile.닉네임 context로 추가 예정
@@ -89,14 +92,6 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request, 'home.html')
-
-
-def home(request):
-    return render(request, 'home.html')
-
-
-
-
 
 
 

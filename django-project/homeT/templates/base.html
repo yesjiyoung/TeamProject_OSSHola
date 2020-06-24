@@ -1,0 +1,98 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/common.css'%}">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="outer"><!--상단부-->
+            
+            <div class="top_nav"><!-- <p>상단 네비게이션</p> -->
+                
+                <!-- 왼쪽 -->
+                <div id="box-left">
+                    <a href="{% url 'home' %}">
+                        <img class="img_logo" src="{% static 'image/로고.png'%}">
+                    </a>
+
+                </div>
+                <!-- 중앙 -->
+                <div id='box-center'>
+                    <form>
+                        <input class="input_button" type="image" src="{% static 'image/find.png'%}" alt="Submit">
+                        <input class="input_box" type="text" placeholder="search">
+                    </form>
+                </div>
+                <!-- 오른쪽 -->
+                <div id='box-right' style="font-family:'a옛날목욕탕L'">
+                    <ul>
+                        {% if user.is_authenticated %}
+                        <li><a href="javascript:{document.getElementById('logout').submit()}"
+                                style="font-size:20px;"><img src="{%static 'image/log-out.png'%}" width="25px"
+                                    height="25px">로그아웃</a></li>
+                        <form id="logout" method="POST" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <input_type="hidden" />
+                            <!--숨겨진 폼 작성-->
+                        </form>
+                        <li><a><img src="{%static 'image/profile.png'%}" width="30" height="30"></a>
+                            <ul><br>
+                 
+                                {% else %}
+                                <li class="li"><a href="{% url 'signup' %}" style="font-family:'a옛날목욕탕L'">회원가입</a></li>
+                                <li class="li"><a href="{% url 'login' %}" style="font-family:'a옛날목욕탕L'">로그인</a></li>
+                                <li class="li"><a><img src="{%static 'image/profile.png'%}" width="30" height="30"></a>
+                        
+                                    {% endif %}
+                                </li>
+                            </ul>
+                </div>
+            </div>
+            
+            <div class="content">
+                <!--왼쪽 부분(nav)-->
+                <div class="left_part" style="font-family:'a옛날목욕탕L'">
+                    <div class="row">
+                        <div class="column">
+                        </div>
+                        <div class="column">
+                            <nav>
+                                <ul class="left_nav">
+                                    <li class="left_nav_item">
+                                        <a href="{% url 'home' %}">
+                                            Home</a>
+                                        <!--홈화면으로 href-->
+                                    </li>
+                                    <li class="left_nav_item">
+                                        <a href="#">인공지능으로 운동 배우기</a>
+                                        <!--인공지능으로 운동 배우기 화면으로 href-->
+                                    </li>
+                                    <li class="left_nav_item">
+                                        <a href="#">인기동영상</a>
+                                        <!--인기동영상 화면으로 href-->
+                                    </li>
+                                    <li class="left_nav_item">
+                                        <a href="#">My Page</a>
+                                        <!--마이페이지 화면으로 href-->
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
