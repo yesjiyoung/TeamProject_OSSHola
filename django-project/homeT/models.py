@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.db import models
+#[HS]About Tag extraction(using Regular expression)
+import re
 
 #[JY]About User Model
 from django.contrib.auth.models import AbstractUser
@@ -45,7 +47,17 @@ class Video(models.Model):
     def __str__(self):
         return self.title
     
-
+    def tag_save(self):
+        tags = re.findall(r'#(\w+)\b', self.content)
+        #re.findall(정규표현식패턴, 텍스트) : 텍스트에서 정규표현식패터에 해당하는 값을 찾아서 리스트로 반환
+        # #로 시작하고 
+        # \w : 텍스트+숫자[a-zA-Z0-9] 
+        # \b : 문자와 공백 사이의 문자
+        if not tags:
+            return
+        for t in tags:
+            tag, tag_created = Tag.objects.get_or_create(name=t)
+            self.tag_set.add(tag) #ManyToMany에 인스턴스 추가
 
 class Like(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
