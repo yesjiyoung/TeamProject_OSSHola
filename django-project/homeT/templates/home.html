@@ -29,17 +29,16 @@
     </div>
     <div class="h-row-box">
         {% for video in VideoList|slice:":4" %}
-
         <a href="{% url 'detail' video.id %}">
-        <div class=item>
+        <div class=h-item>
             <a href="{% url 'detail' video.id %}">
 
-            <div class="video_thumbnail">
-                <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0"
+            <div class="h-video">
+                <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
-            <div class="video_title">
+            <div class="h-video_title">
                 <p>{{video.title}}</p>
             </div>
             </a>
