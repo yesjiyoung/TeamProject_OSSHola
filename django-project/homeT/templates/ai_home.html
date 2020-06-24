@@ -3,8 +3,7 @@
 {% block content %}
 <div class="right_part">
     <div class="row-box">
-        {% for video in VideoList|slice:":2" %}
-        {% if video.tag == "인공지능운동" %}
+        {% for video in AIList|slice:":2" %}
         <div class=item>
             <div class="video_thumbnail">
                 <a href="{% url 'aiDetail' video.id %}">
@@ -15,12 +14,11 @@
                 <p>{{video.title}}</p>
             </div>
         </div>
-        {% endif %}
         {% endfor %}
     </div>
+    <br>
     <div class="row-box">
-        {% for video in VideoList|slice:"2:" %}
-        {% if video.tag == "인공지능운동" %}
+        {% for video in AIList|slice:"2:" %}
         <div class=item>
             <div class="video_thumbnail">
                 <a href="{% url 'aiDetail' video.id %}">
@@ -31,7 +29,6 @@
                 <p>{{video.title}}</p>
             </div>
         </div>
-        {% endif %}
         {% endfor %}
     </div>
 
