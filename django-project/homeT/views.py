@@ -18,7 +18,7 @@ import json
 class VideoLoad(ListView):
     model = Video
     def get(self,request):
-        template_name = 'home_be.html'
+        template_name = 'home.html'
         VideoList = Video.objects.all()
         return render(request, template_name, {'VideoList':VideoList})
 
@@ -92,14 +92,6 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return render(request, 'home.html')
-
-
-def home(request):
-    return render(request, 'home.html')
-
-
-
-
 
 
 
