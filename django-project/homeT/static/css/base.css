@@ -16,10 +16,6 @@
 
 
 
-
-/* .cate{
-    margin: 10px 0; 
-} */
 .cate_name h3{
     padding:0 0 20px 0;
     margin: 0;
@@ -36,25 +32,3 @@
     margin-right: 10px;
     
 }
-
-.video_thumnail img {
-    /* position: absolute; */
-    height: 190px;
-}
-
-.video_title p{
-    padding: 8px 10px 10px 10px;
-    margin: 0;
-}
-
-/* PART0을 위한 CSS */
-
-/* #video_big{
-    border: 1px solid black;
-    width:408.89px;
-    margin-bottom: 20px;
-} */
-/* .video_thumnail_big img{
-    height: 230px;
-    width:408.89px;
-} */

@@ -10,16 +10,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/ai_home.css' %}">
-    
+
 
 </head>
 
 <body>
     <div class="container">
-        <div class="outer"><!--상단부-->
-            
-            <div class="top_nav"><!-- <p>상단 네비게이션</p> -->
-                
+        <div class="outer">
+            <!--상단부-->
+
+            <div class="top_nav">
+                <!-- <p>상단 네비게이션</p> -->
+
                 <!-- 왼쪽 -->
                 <div id="box-left">
                     <a href="{% url 'home' %}">
@@ -48,18 +50,18 @@
                         </form>
                         <li><a><img src="{%static 'image/profile.png'%}" width="30" height="30"></a>
                             <ul><br>
-                 
+
                                 {% else %}
                                 <li class="li"><a href="{% url 'signup' %}" style="font-family:'a옛날목욕탕L'">회원가입</a></li>
                                 <li class="li"><a href="{% url 'login' %}" style="font-family:'a옛날목욕탕L'">로그인</a></li>
                                 <li class="li"><a><img src="{%static 'image/profile.png'%}" width="30" height="30"></a>
-                        
+
                                     {% endif %}
                                 </li>
                             </ul>
                 </div>
             </div>
-            
+
             <div class="content">
                 <!--왼쪽 부분(nav)-->
                 <div class="left_part" style="font-family:'a옛날목욕탕L'">
