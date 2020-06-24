@@ -1,0 +1,226 @@
+/*
+[stylesheet 설명]
+body: 전체 배경색
+outer: 가장 외곽의 둥근 사각형
+top_nav: 화면 상단에 위치하는 nav바
+content: nav바 밑에 위치할 본문 내용(flex, 모든아이템이 세로중앙에 위치하게, 높이는 100%)
+*/
+
+
+
+/* 전체 구조 */
+body{
+    background: white;
+    margin: 0;
+}
+.outer{
+    position:absolute;
+    top:50%;
+    left:50%;
+    background: white;
+    transform:translate(-50%, -50%);
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /* display: flex; */
+    /* align-items: center; */
+    /* height:100%;
+    width: 100%; */
+    border-radius: 100px;
+    width: 100%;
+    height: 100%;
+}
+.content {
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    height: calc(100% - 110px);
+}
+/* 끝 */
+
+/* 상단 네브바 */
+.top_nav{
+    border-radius: 100px 100px 0px 0px / 100px 100px 20px 0px;
+    width: 100%; /* 0731 PM 19:10 기준 가로 넓이임*/
+    height: 110px;
+    display: flex;
+    background-color: white;
+}
+
+#box-left { 
+flex: 1;
+text-align: center;
+/* padding: 40px 0; */
+
+}  
+
+.img_logo{
+    padding-top: 20px;
+    max-width:100%;
+    width: 200px;
+}
+
+/* .img_logo{
+    width: 180px;
+    height: 30px;
+} */
+
+#box-center {
+flex: 3;
+text-align: left;
+padding: 30px 0;
+
+}
+input    {
+    vertical-align: middle;
+    margin-right: 15px;
+}
+input:focus{
+    outline:none;
+}
+.input_box{
+    padding: 20px;
+    border: 1.8px solid #3E3E63;
+    border-radius : 30px; 
+    width:600px;
+    height:15px;            
+    font-size: 17px;
+}
+.input_button {
+    width:32px;
+    height:32px;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+  #box-right {
+    flex: 1;
+    margin: 0 auto;
+    padding: 35px 0;
+  }
+  #box-right ul{
+      float: left; 
+      text-align: center;
+      margin: 0;
+      padding: 0;
+  }
+  .li{
+      list-style-type: none;
+      display: inline-block;
+      text-align: center;
+      outline : lpx dotted #3E3E63;
+      margin-right: 30px;
+      font-size: 25px;
+  }
+/* 끝 */
+
+/*네브바 추가 */
+
+/* a태그 속성 추가 */
+#box-right a{
+    text-decoration:none;
+    color: black;
+}
+
+#box-right ul li a{
+    color: #2b2929;
+
+}
+
+/* 서브바 추가 */
+#box-right li ul {
+    text-align: left;
+    background: #3E3E63;
+    display: none;
+    height:auto;
+    padding: 0;
+    margin:0px;
+    border:0px;
+    position:absolute;
+    width:150px;
+    z-index:200;
+
+}
+#box-right li:hover ul {
+    border-radius: 35px;
+    display: block;  /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+    /* text-align: center; */
+    margin-left: auto;
+    margin-right: auto;
+    }
+#box-right li ul li{
+    text-align: left;
+    display:inline-block;
+    line-height: 35px;
+    height: auto;
+    padding: 0px;
+    height: 35px;
+    /* border-bottom: 2px solid #2ec3af ; */
+    /* position: relative; */
+    margin-left: 22px;
+    font-size: 23px;
+}
+/* 추가 끝 */
+
+
+
+
+
+
+/*왼쪽 nav 부분 css*/
+.left_part{
+    border-radius: 0 80px 0 0 / 0 80px 0 0; 
+    background-color: #3E3E63;
+    width: 380px;
+    height: calc(100%-110px);
+    padding: 0 16px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about_us h1 {
+    color: white;
+}
+.column{
+    position: relative;
+    float: left;
+    width:100%;
+    padding-right:16px;
+    text-align: center;
+}
+
+
+.left_nav{
+    padding-right: 40px;
+}
+
+
+.left_nav_item{
+    list-style-type: none;
+    position: relative;
+    display: block;
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.left_nav_item a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.left_nav_item a img {
+    width: 30px;
+    height: 30px;
+}
+/* 끝 */
+
+
+hr{
+    float: left;
+}
