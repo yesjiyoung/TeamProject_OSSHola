@@ -1,0 +1,1 @@
+squat model training

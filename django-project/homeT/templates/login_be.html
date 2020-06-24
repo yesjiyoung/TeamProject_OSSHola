@@ -1,12 +1,46 @@
-<form class="loginform" method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
-    <div>
-        <h4>USERNAME</h4>
-        <input name="username" type="username">
+{% extends 'base.html' %}
+{% block content %}
+<div class ='right_part' >
+    <div class = 'logcommon'>
+        <!-- <center>
+        <h2 class='ment'>로그인 페이지 입니다.</h2>
+        <form class="loginform" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <h4>USERNAME</h4>
+                <input name="username" type="username">
+            </div>
+            <div class="form-group">
+                <h4>PASSWORD</h4>
+                <input name="password" type="password">
+            </div>
+            <input class="btn btn-primary" type="submit" value="로그인">
+        </form>
+    </center> -->
+
+
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">로그인!</h4>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+      </div>
+
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input name="username" type="username" class="form-control" id="exampleInputEmail1">
+          <small id="emailHelp" class="form-text text-muted">사용자 이름을 입력하세요</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+          <small id="emailHelp" class="form-text text-muted">비밀번호를 입력하세요</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
     </div>
-    <div>
-        <h4>PASSWORD</h4>
-        <input name="password" type="password">
-    </div>
-    <input type="submit" value="login">
-</form>
+</div>
+{% endblock %}
