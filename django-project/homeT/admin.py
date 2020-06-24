@@ -1,9 +1,16 @@
 from django.contrib import admin
 
+<<<<<<< HEAD
 #[JY] User Model 작업때문에 잠시 주석처리합니다.-> 다시 살림
 from .models import Video, Like, Category
+=======
+
+from .models import Video, Like, Comment
+
+>>>>>>> issue/53
 # Register your models here.
 admin.site.register(Video)
+admin.site.register(Comment)
 
 from .models import User
 from django.contrib.auth.admin import UserAdmin

@@ -1,19 +1,22 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
-# [JY] User Model 작업때문에 잠시 주석처리합니다.
-from .models import Video
 
+from .models import Video
 #[JY]About User 
 from django.contrib.auth.models import User  
 from django.contrib import auth, messages #messages for video_like
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
-# [JY] User Model 작업때문에 잠시 주석처리합니다.-> 다시 살림
+
 # [HS]About video_like
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse
 import json
+
+#[JY]About comment
+from .models import Comment
+from .forms import *
 
 class VideoLoad(ListView):
     model = Video
@@ -31,7 +34,20 @@ class AiLoad(ListView):
 
 def detail(request, detail_id):
     detail_obj = get_object_or_404(Video, pk=detail_id)
-    return render(request, 'detail_be.html', {'detailObj':detail_obj})
+
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        comment_form.instance.user_id = request.user.id
+        comment_form.instance.v_id = v_id
+
+        if comment_form.is_valid():
+            comment = comment_form.save()
+
+
+    comment_form = CommentForm()
+    comments = video.comments.all()
+
+    return render(request, 'detail_be.html', {'detailObj':detail_obj, "comments":comments, "comment_form":comment_form})
 
 
 @require_POST
@@ -52,6 +68,8 @@ def video_like(request):
     'message': message} # 'nickname':request.user.profile.닉네임 context로 추가 예정
 
     return HttpResponse(json.dumps(context), content_type='application/json') #context를 json타입으로 보낸다)
+
+
 
 def signup(request):
     if request.method == 'POST':
