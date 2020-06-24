@@ -9,6 +9,52 @@
     padding-right: 70px;
     overflow-y: scroll;
 }
+
+.gory{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+#category_menu{
+    height: 50px;
+}
+
+#category_menu ul {
+    list-style: none;
+    padding: 0 auto;
+    margin : 0;
+}
+
+#category_menu ul li{
+    float:left;
+    width:8%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(65, 105, 225, 0.4);
+    color: black;
+    /* border: 2px solid #4169e1; */
+    margin: 10px;
+    border-radius: 30px;
+}
+/* 파랑색 클릭하면 찐해진다 */
+#category_menu ul .top_on{
+    background-color: #3c65be;
+    color: white;
+}
+
+#category_menu li{
+    text-decoration:none;
+    color: black;
+    font-size: 20px;
+}
+
+
+
+
+
+/* 나뎌로 */
 .p-row-box{
     display: flex;
     flex-direction: row;

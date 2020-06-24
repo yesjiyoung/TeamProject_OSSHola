@@ -2,44 +2,89 @@
 
 {% block content %}
 <!--오른쪽 부분-->
-<!-- 인기동영상 -->
-
 <div class="right_part">
-
-    <!-- 인공지능운동 -->
-    <div class="p-row-box">
-        {% for aiVideo in AIList|slice":4" %}
-        <div class=p-item>
-            <a href="{% url 'aiDetail' aiVideo.id %}">
-                <div class="p-video">
-                    <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{aiVideo.v_id}}"
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="p-video_title">
-                    <p>{{aiVideo.title|truncatechars_html:40}}</p>
-                </div>
-            </a>
+    <!-- 카테고리 -->
+    <div class="gory">
+        <div id="category_menu" style="font-family:'a옛날목욕탕L'">
+            <ul>
+                <li class="UpperList">#상체</li>
+                <li class="parts">#어깨</li>
+                <li class="genre">#가슴</li>
+                <li class="level">#팔</li>
+                <li class="trend">#복부</li>
+                <li class="diet">#하체</li>
+                <li class="howto">#다리</li>
+                <li class="howto">#엉덩이</li>
+                <li class="howto">#댄스</li>
+                <li class="howto">#스트레칭</li>
+            </ul>
         </div>
-        {% endfor %}
     </div>
-    <div class="p-row-box">
-        {% for aiVideo in AIList|slice"4:" %}
-        <div class=p-item>
-            <a href="{% url 'aiDetail' aiVideo.id %}">
-                <div class="p-video">
-                    <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{aiVideo.v_id}}"
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="p-video_title">
-                    <p>{{aiVideo.title|truncatechars_html:40}}</p>
-                </div>
-            </a>
+    <!-- 상체 -->
+    <div class="UpperList">
+        <div class="p-row-box">
+            {% for video in UpperList %}
+            <!--|slice:":4"-->
+            <div class=p-item>
+                <a href="{% url 'detail' video.id %}">
+                    <div class="p-video">
+                        <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="p-video_title">
+                        <p>{{video.title|truncatechars_html:40}}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        <div class="p-row-box">
+            {% for video in UpperList %}
+            <!--|slice:"4:"-->
+            <div class=p-item>
+                <a href="{% url 'detail' video.id %}">
+                    <div class="p-video">
+                        <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{video.v_id}}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="p-video_title">
+                        <p>{{video.title|truncatechars_html:40}}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     <!-- 끝 -->
 
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script>
+
+    // $(function() {
+    //     $(window).load(function() {
+    //         $(".place").trigger("click");
+    //         $(".place_sub1").trigger("click");
+    //     });
+
+    // });
+
+    $(document).ready(function () {
+        // # 처음 시작 세팅을 강제 클릭으로 만들게요
+        // --끝
+        $('#category_menu ul li').click(function () {
+            $(this).addClass('top_on').siblings().removeClass('top_on');
+            // $("[class*='UpperList'").
+        });
+
+        //top_on 클래스가 있으면 show, 아니면 hidden
+    });
+
+</script>
+
 {% endblock %}
