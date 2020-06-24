@@ -17,7 +17,9 @@
 }
 .item{
     border: 1px black solid;
+    width: 40%;
     margin-right: 10px;
+
 }
 
 .img {
