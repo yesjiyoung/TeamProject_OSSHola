@@ -14,12 +14,21 @@
 </style>
 
 <h1>detail 페이지입니다</h1>
+{{ detailObj.tag_save }}
+
 {{ detailObj.title}}
 <iframe width="871" height="490" src="https://www.youtube.com/embed/{{detailObj.v_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <li>
     <input type="button" class="like-button {% if user in detailObj.like_user_set.all %} active {% else %} deactivate {% endif %}" name="{{detailObj.id}}" value="좋아요">
     <p id="count-{{videoObj.id}}">{{ detailObj.like_count }}개</p>
+</li>
+
+<li>
+    <h1>가지고 있는 태그</h1>
+    {% for tag in detailObj.tag_set.all %}
+        #{{ tag.name }}
+    {% endfor %}
 
 </li>
 
