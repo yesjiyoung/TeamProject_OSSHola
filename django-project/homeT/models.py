@@ -54,6 +54,9 @@ class Video(models.Model):
     def __str__(self):
         return "["+self.tag+"]  " + self.title
 
+    def get_absolute_url(self):
+        return reverse('detail', video.id )
+
     # @property
     # def tag_save(self):
     #     tags = re.findall(r'#(\w+)\b', self.tagcontent)
@@ -88,3 +91,5 @@ class Comment(models.Model):
 
     def __str__(self):
         return '{}.{}'.format(self.video.title, str(self.user.username))
+
+
