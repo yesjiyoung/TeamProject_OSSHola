@@ -93,13 +93,13 @@ def signup(request):
             return redirect('correct')
         else:
             return redirect('uncorrect')
-    return render(request, 'signup.html')
+    return render(request, 'signup2.html')
 
 def correct(request):
-    return render(request, 'signup_correct.html')
+    return render(request, 'signup_correct2.html')
 
 def uncorrect(request):
-    return render(request, 'signup_uncorrect.html')
+    return render(request, 'signup_uncorrect2.html')
 
 
 
