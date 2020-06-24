@@ -10,6 +10,7 @@
     <div class="row-box">
         {% for aiVideo in AIList %}
         <div class=item>
+            <a href="{% url 'aiDetail' aiVideo.id %}">
             <div class="video_thumbnail">
                 <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{aiVideo.v_id}}" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -18,6 +19,7 @@
             <div class="video_title">
                 <p>{{aiVideo.title}}</p>
             </div>
+            </a>
         </div>
         {% endfor %}
     </div>
@@ -28,6 +30,8 @@
     <div class="row-box">
         {% for video in VideoList|slice:":4" %}
         <div class=item>
+            <a href="{% url 'detail' video.id %}">
+
             <div class="video_thumbnail">
                 <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -36,6 +40,7 @@
             <div class="video_title">
                 <p>{{video.title}}</p>
             </div>
+            </a>
         </div>
         {% endfor %}
     </div>
