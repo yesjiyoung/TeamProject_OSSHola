@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="detail_right_part">
+    <div class="main_video_box">
+        <iframe width="871" height="490" src="https://www.youtube.com/embed/{{detailObj.v_id}}" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <div class="main_video_info">
+            <div class="main_video_title">
+                <p>{{ detailObj.title}}</p>
+            </div>
+
+            <div class="heart">
+                <!-- 내가 픽한 영상에 들어가게 될 영상을 고르는 하트 버튼! 아직 mypick()함수 구현 안됨-->
+                <input type="button"
+                    class="like-button {% if user in detailObj.like_user_set.all %} active {% else %} deactivate {% endif %}"
+                    name="{{detailObj.id}}" value="좋아요">
+                <p class="heart_count" id="count-{{videoObj.id}}">{{ detailObj.like_count }}개</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="recc_video">
+        <!-- 추천동영상 -->
+        <div class="item">
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

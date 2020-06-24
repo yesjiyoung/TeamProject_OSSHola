@@ -23,7 +23,7 @@ from homeT.views import VideoLoad, AiLoad, video_like,detail
 urlpatterns = [
     path('', VideoLoad.as_view(), name='home'),
     path('detail/<int:detail_id>', homeT.views.detail, name='detail'),
-    path('detail/(?P<detail_id>[0-9]+)$', homeT.views.video_like, name='video_like'),
+    path('detail/$', homeT.views.video_like, name='video_like'),
     path('admin/', admin.site.urls),
     path('signup/', homeT.views.signup, name='signup'),
     path('unlog/', homeT.views.unlog, name='unlog'),

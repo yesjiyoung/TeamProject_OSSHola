@@ -4,68 +4,54 @@
 <!--오른쪽 부분-->
 
 <div class="right_part">
-    <div class="row-box cate_name">
+    <div class="h-row-box cate_name">
         <h3>인공지능과 함께 운동하기</h3>
     </div>
-    <div class="row-box">
+    <div class="h-row-box">
         {% for aiVideo in AIList %}
-        <div class=item>
-            <div class="video_thumbnail">
-                <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{aiVideo.v_id}}" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="video_title">
-                <p>{{aiVideo.title}}</p>
-            </div>
+        <div class=h-item>
+            <a href="{% url 'aiDetail' aiVideo.id %}">
+                <div class="h-video">
+                    <iframe width="auto" height="170" src="https://www.youtube.com/embed/{{aiVideo.v_id}}"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="h-video_title">
+                    <p>{{aiVideo.title|truncatechars_html:40}}</p>
+                </div>
+            </a>
+
         </div>
         {% endfor %}
     </div>
     <br>
-    <div class="row-box cate_name">
+    <div class="h-row-box cate_name">
         <h3>인기 동영상</h3>
     </div>
-    <div class="row-box">
+    <div class="h-row-box">
         {% for video in VideoList|slice:":4" %}
-        <div class=item>
-            <div class="video_thumbnail">
-                <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+        <a href="{% url 'detail' video.id %}">
+
+            <div class=h-item>
+
+                <div class="video_thumbnail">
+                    <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{video.v_id}}" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="h-video_title">
+                    <p>{{video.title}}</p>
+                </div>
+
             </div>
-            <div class="video_title">
-                <p>{{video.title}}</p>
-            </div>
-        </div>
+        </a>
+
         {% endfor %}
     </div>
 
 </div>
 
 
-
-<!-- <div class="right_part">
-
-    <div class="row_box cate_name">
-        <h3>인공지능으로 운동 배우기</h3>
-    </div>
-    <div class="row_box">
-        {% for aiVideo in AIList %}
-        <div id="item">
-            <a href="{% url 'detail' aiVideo.id %}">
-            <div class="video">
-                <iframe width="auto" height="190" src="https://www.youtube.com/embed/{{aiVideo.v_id}}" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="video_title">
-                <p>{{aiVideo.title}}</p>
-            </div>
-        </a>
-        </div>
-        {% endfor %}
-    </div>
-</div> -->
 
 
 {% endblock %}
