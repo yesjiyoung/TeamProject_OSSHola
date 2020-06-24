@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="color:cornflowerblue; text-align:center">
+<h1 class='signup'>회원가입</h1></div>
+    
+
+    <form method="POST" action="{% url 'signup' %}">
+      {% csrf_token %}
+      <!-- username -->
+      <div>
+        <h3>아이디</h3> <input name="username" type="username" class="signup_form">  
+      </div>
+
+      <!-- password -->
+      <div>
+        <h3>비밀번호</h3> <input name="password" type="password" class="signup_form">  
+      </div>
+
+      <!-- password check-->
+      <div>
+        <h3>비밀번호확인</h3> <input name="password_check" type="password" class="signup_form">
+      </div>
+
+      <!-- nick name-->
+      <div>
+        <h3>닉네임</h3> <input name="nickname" type="text" class="signup_form">
+      </div>
+
+      <!-- 나이 data -->
+      <div>
+         <h3>나이</h3>
+        <input type="radio" name="age" value="10대이하"/>10대이하
+        <input type="radio" name="age" value="10대"/>10대
+        <input type="radio" name="age" value="20대"/>20대
+        <input type="radio" name="age" value="30대"/>30대
+        <input type="radio" name="age" value="40대"/>40대
+        <input type="radio" name="age" value="50대"/>50대
+        <input type="radio" name="age" value="50대이상"/>50대 이상
+    </div>
+
+      <!-- 운동목적 data -->
+      <div style="background-color:lightblue; color:black">
+      <h3>최근 가장 관심가는 운동</h3>
+         <input type="radio" name="workout_data" value="상체"/>상체
+         <input type="radio" name="workout_data" value="하체"/>하체
+         <input type="radio" name="workout_data" value="힙"/>힙
+         <input type="radio" name="workout_data" value="복부"/>복부
+         <input type="radio" name="workout_data" value="등"/>등
+         <input type="radio" name="workout_data" value="어깨"/>어깨
+         <input type="radio" name="workout_data" value="가슴"/>가슴
+         <input type="radio" name="workout_data" value="팔"/>팔
+         <input type="radio" name="workout_data" value="스트레칭"/>스트레칭
+         <input type="radio" name="workout_data" value="다이어트댄스"/>다이어트 댄스
+      </div> 
+      <div></div> 
+
+      <button type="button" onclick="location.href='home.html'" value="button">회원가입 하기</button>
+
+      <div></div>
+       
+{% endblock %}
