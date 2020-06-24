@@ -1,12 +1,30 @@
-.content{
+/* 오른쪽 전체 파트 */
+.right_part{
     display: flex;
+    /* justify-content: center; */
     flex-direction: column;
+    /* width: 900px; */
+    height: calc(100%-110px);
+    width: 100%;
+    margin: 15px 0 0 70px ;
+    padding-right: 70px;
+    overflow-y: scroll;
 }
 .row-box{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .item{
     border: 1px black solid;
     margin-right: 10px;
+}
+
+.img {
+    height: 190px;
+}
+
+.video_title p{
+    padding: 8px 10px 10px 10px;
+    margin: 0;
 }
