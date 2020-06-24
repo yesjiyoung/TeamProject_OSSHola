@@ -34,8 +34,30 @@ class AiLoad(ListView):
     def get(self, request):
         template_name='ai_home.html'
         AIList = Video.objects.filter(tag="인공지능운동")
-
         return render(request, template_name, {'AIList':AIList})
+
+class PopLoad(ListView):
+    model=Video
+    def get(self, request):
+        template_name = 'pop_video.html'
+        AIList = Video.objects.filter(tag="인공지능운동")
+        HipList= Video.objects.filter(tag="힙")
+        UpperList= Video.objects.filter(tag="상체")
+        ChestList= Video.objects.filter(tag="가슴")
+        SList= Video.objects.filter(tag="어깨")
+        LList= Video.objects.filter(tag="다리")
+        AList= Video.objects.filter(tag="팔")
+        DanceList= Video.objects.filter(tag="다이어트댄스")
+        StretchList= Video.objects.filter(tag="스트레칭")
+        StomachList= Video.objects.filter(tag="복부")
+        LowerList= Video.objects.filter(tag="하체")
+        
+        return render(request, template_name, {'AIList':AIList,'HipList':HipList,'UpperList':UpperList,
+        'ChestList':ChestList,'SList':SList,'LList':LList,'AList':AList, 
+        'DanceList':DanceList, 'StretchList':StretchList, 'StomachList':StomachList,'LowerList':LowerList})
+
+
+
 
 def detail(request, detail_id):
     detail_obj = get_object_or_404(Video, pk=detail_id)
