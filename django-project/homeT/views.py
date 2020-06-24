@@ -60,13 +60,13 @@ def signup(request):
             return redirect('correct')
         else:
             return redirect('uncorrect')
-    return render(request, 'signup_be.html')
+    return render(request, 'signup.html')
 
 def correct(request):
-    return render(request, 'signup_correct_be.html')
+    return render(request, 'signup_correct.html')
 
 def uncorrect(request):
-    return render(request, 'signup_uncorrect_be.html')
+    return render(request, 'signup_uncorrect.html')
 
 
 
@@ -79,12 +79,12 @@ def login(request):
             auth.login(request, user)
             return redirect('main')
         else:
-            return render(request, 'unlog_be.html')
+            return render(request, 'unlog.html')
     else:
-        return render(request, 'login_be.html')
+        return render(request, 'login.html')
 
 def unlog(request):
-    return render(request, 'unlog_be.html')
+    return render(request, 'unlog.html')
 
 
 def logout(request):
