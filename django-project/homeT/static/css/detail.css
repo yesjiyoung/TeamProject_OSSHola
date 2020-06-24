@@ -30,11 +30,11 @@
 }
 .main_video_title p{
     width: 100%;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
-    white-space: nowrap;
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
 }
 .heart{
     flex: 1;
@@ -48,7 +48,7 @@
     height: 80px;
     border: 0;
     padding: 0;
-    margin: 10px 26px;
+    margin: 0;
 }
 .active{
     background: url(../image/full_heart.png) no-repeat;
@@ -58,10 +58,16 @@
     height: 80px;
     border: 0;
     padding: 0;
-    margin: 10px 26px;
+    margin: 0;
+    /* margin: 10px 26px; */
 }
 .heart_count{
     font-size: 20px;
+    font-weight: bold;
+}
+
+.info{
+    padding: 20px 10px;
 }
 
 .recc_video{
