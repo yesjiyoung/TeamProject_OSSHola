@@ -1,6 +1,35 @@
 {% extends 'base.html' %}
 {%block title %}인공지능과 운동하기{% endblock %}
 {% block content %}
+<div class="content">
+    <div class="row-box">
+        {% for video in VideoList|slice:":2" %}
+            {% if video.tag == "인공지능운동" %}
+                <div class="video_thumbnail">
+                    <a href="{% url 'aiDetail' video.id %}">
+                        <img src="http://i.ytimg.com/vi/{{video.v_id}}/maxresdefault.jpg" alt="운동영상">
+                    </a>
+                </div>
+                <div class="video_title">
+                    <p>{{video.title}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="row-box">
+        {% for video in VideoList|slice:"2:" %}
+            {% if video.tag == "인공지능운동" %}
+                <div class="video_thumbnail">
+                    <a href="{% url 'aiDetail' video.id %}">
+                        <img src="http://i.ytimg.com/vi/{{video.v_id}}/maxresdefault.jpg" alt="운동영상">
+                    </a>
+                </div>
+                <div class="video_title">
+                    <p>{{video.title}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
 
-
+</div>
 {% endblock %}
