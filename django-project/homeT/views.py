@@ -45,7 +45,7 @@ def detail(request, detail_id):
 
 
     comment_form = CommentForm()
-    comments = video.comments.all()
+    comments = detail_obj.comments.all()
 
     return render(request, 'detail_be.html', {'detailObj':detail_obj, "comments":comments, "comment_form":comment_form})
 
