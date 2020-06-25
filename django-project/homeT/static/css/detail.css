@@ -75,7 +75,11 @@
 .recc_video{
     display: flex;
     flex-direction: column;
+
     border-left: 3px groove solid #3E3E63;
+
+    border-left: 3px solid #3E3E63;
+
     padding: 10px 20px;
     margin-left: 60px;
     margin-top: 80px;
