@@ -108,24 +108,18 @@ def video_like(request):
 def signup(request):
     if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
-            user = User.objects.create_user(
-                username=request.POST['username'],
-                password=request.POST['password1'], 
-                nickname=request.POST['nickname'],
-                age=request.POST['age'],
-                workingout=request.POST['workout_data']
-                )
-            auth.login(request, user)
+            user = User.objects.create_user(username=request.POST['username'],password=request.POST['password1'])
+            #auth.login(request, user)
             return redirect('correct')
         else:
             return redirect('uncorrect')
     return render(request, 'signup2.html')
 
 def correct(request):
-    return render(request, 'signup_correct2.html')
+    return render(request, 'signup2_correct.html')
 
 def uncorrect(request):
-    return render(request, 'signup_uncorrect2.html')
+    return render(request, 'signup2_uncorrect.html')
 
 
 
