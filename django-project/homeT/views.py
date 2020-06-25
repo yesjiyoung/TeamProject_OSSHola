@@ -150,6 +150,10 @@ def logout(request):
     return render(request, 'home.html')
 
 
+def AI(request):
+    return render(request, 'index.html')
+
+
 
 
 

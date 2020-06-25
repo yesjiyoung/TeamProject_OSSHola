@@ -34,4 +34,6 @@ urlpatterns = [
     path('aiHome/',AiLoad.as_view(), name='aiHome'),
     path('aidetail/<int:ai_detail_id>', homeT.views.ai_detail,name='aiDetail'),
     path('popVideo/',PopLoad.as_view(),name='popVideo'),
+    path('ai/',homeT.views.AI,name='ai'),
+
 ]
