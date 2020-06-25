@@ -5,7 +5,8 @@ outer: 가장 외곽의 둥근 사각형
 top_nav: 화면 상단에 위치하는 nav바
 content: nav바 밑에 위치할 본문 내용(flex, 모든아이템이 세로중앙에 위치하게, 높이는 100%)
 */
-
+font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal; }
+font-face { font-family: 'Cafe24Dangdanghae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 
 /* 전체 구조 */
@@ -97,6 +98,7 @@ input:focus{
     flex: 1;
     margin: 0 auto;
     padding: 35px 0;
+    font-size: 15px;
   }
   #box-right ul{
       float: left; 
