@@ -109,17 +109,18 @@ def signup(request):
     if request.method == 'POST':
         if request.POST['password1'] == request.POST['password2']:
             user = User.objects.create_user(username=request.POST['username'],password=request.POST['password1'])
-            #auth.login(request, user)
+            #회원가입시 자동으로 로그인되지 않도록. 
+            #auth.login(request, user)  
             return redirect('correct')
         else:
             return redirect('uncorrect')
-    return render(request, 'signup2.html')
+    return render(request, 'signup.html')
 
 def correct(request):
-    return render(request, 'signup2_correct.html')
+    return render(request, 'signup_correct.html')
 
 def uncorrect(request):
-    return render(request, 'signup2_uncorrect.html')
+    return render(request, 'signup_uncorrect.html')
 
 
 
@@ -134,9 +135,9 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request, 'unlog_be.html')
+            return render(request, 'unlog.html')
     else:
-        return render(request, 'login_be.html')
+        return render(request, 'login.html')
 
 def unlog(request):
     return render(request, 'unlog.html')
