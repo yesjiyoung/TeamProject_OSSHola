@@ -82,7 +82,7 @@ def detail(request, detail_id):
 
 def ai_detail(request, ai_detail_id):
     detail_ai_obj = get_object_or_404(Video, pk=ai_detail_id)
-    return render(request, 'ai_detail.html', {'detail_ai_obj':detail_ai_obj})
+    return render(request, 'teachable_machine/index.html', {'detail_ai_obj':detail_ai_obj})
 
 @require_POST
 def video_like(request):
