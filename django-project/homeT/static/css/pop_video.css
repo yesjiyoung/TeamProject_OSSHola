@@ -63,16 +63,19 @@
 .p-item{
     display: flex;
     flex-direction: column;
-    border: 1px black solid;
+    border: 2.3px #3E3E63 solid;
     width: 300px;
     height: 256px;
     margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
 
 }
 .p-video_title p{
     padding: 8px 10px 10px 10px;
     margin: 0;
-    color: red;
+    color: black;
+    font-size: 18px;
 }
 
 .cate{

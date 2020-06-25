@@ -25,8 +25,8 @@
         <!-- 상체 -->
         <div class="cate default" id="UpperList">
             <div class="p-row-box">
-                {% for video in UpperList %}
-                <!--|slice:":4"-->
+                {% for video in UpperList|slice:":4" %}
+                
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
                         <div class="p-video">
@@ -43,8 +43,8 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in UpperList %}
-                <!--|slice:"4:"-->
+                {% for video in UpperList|slice:"4:" %}
+                <!---->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
                         <div class="p-video">
@@ -66,8 +66,8 @@
         <!-- 어깨 -->
         <div class="cate" id="SList">
             <div class="p-row-box">
-                {% for video in SList %}
-                <!--|slice:":4"-->
+                {% for video in SList|slice:":4" %}
+                <!---->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
                         <div class="p-video">
@@ -84,8 +84,8 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in SList %}
-                <!--|slice:"4:"-->
+                {% for video in SList|slice:"4:" %}
+                <!---->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
                         <div class="p-video">
@@ -107,8 +107,8 @@
         <!-- 가슴 -->
         <div class="cate" id="ChestList">
             <div class="p-row-box">
-                {% for video in ChestList %}
-                <!--|slice:":4"-->
+                {% for video in ChestList|slice:":4" %}
+                <!---->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
                         <div class="p-video">
@@ -125,7 +125,7 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in ChestList %}
+                {% for video in ChestList|slice:"4:" %}
                 <!--|slice:"4:"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -148,7 +148,7 @@
         <!-- 팔 -->
         <div class="cate" id="AList">
             <div class="p-row-box">
-                {% for video in AList %}
+                {% for video in AList|slice:":4" %}
                 <!--|slice:":4"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -166,7 +166,7 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in AList %}
+                {% for video in AList|slice:"4:" %}
                 <!--|slice:"4:"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -189,7 +189,7 @@
         <!-- 어깨 -->
         <div class="cate" id="StomachList">
             <div class="p-row-box">
-                {% for video in StomachList %}
+                {% for video in StomachList|slice:":4" %}
                 <!--|slice:":4"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -207,7 +207,7 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in StomachList %}
+                {% for video in StomachList|slice:"4:" %}
                 <!--|slice:"4:"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -230,7 +230,7 @@
         <!-- 하체 -->
         <div class="cate" id="LowerList">
             <div class="p-row-box">
-                {% for video in LowerList %}
+                {% for video in LowerList|slice:":4"%}
                 <!--|slice:":4"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -248,8 +248,8 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in LowerList %}
-                <!--|slice:"4:"-->
+                {% for video in LowerList|slice:"4:" %}
+                <!---->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
                         <div class="p-video">
@@ -270,7 +270,7 @@
         <!-- 다리 -->
         <div class="cate" id="LList">
             <div class="p-row-box">
-                {% for video in LList %}
+                {% for video in LList|slice:":4" %}
                 <!--|slice:":4"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -288,7 +288,7 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in LList %}
+                {% for video in LList|slice:"4:" %}
                 <!--|slice:"4:"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -310,7 +310,7 @@
         <!-- 엉덩이 -->
         <div class="cate" id="HipList">
             <div class="p-row-box">
-                {% for video in HipList %}
+                {% for video in HipList|slice:":4" %}
                 <!--|slice:":4"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -328,7 +328,7 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in HipList %}
+                {% for video in HipList|slice:"4:" %}
                 <!--|slice:"4:"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -350,7 +350,7 @@
         <!-- 다이어트댄스 -->
         <div class="cate" id="DanceList">
             <div class="p-row-box">
-                {% for video in DanceList %}
+                {% for video in DanceList|slice:":4" %}
                 <!--|slice:":4"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -368,7 +368,7 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in DanceList %}
+                {% for video in DanceList|slice:"4:" %}
                 <!--|slice:"4:"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -390,7 +390,7 @@
         <!-- 스트레칭 -->
         <div class="cate" id="StretchList">
             <div class="p-row-box">
-                {% for video in StretchList %}
+                {% for video in StretchList|slice:":4" %}
                 <!--|slice:":4"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
@@ -408,7 +408,7 @@
                 {% endfor %}
             </div>
             <div class="p-row-box">
-                {% for video in StretchList %}
+                {% for video in StretchList|slice:"4:"%}
                 <!--|slice:"4:"-->
                 <div class=p-item>
                     <a href="{% url 'detail' video.id %}">
