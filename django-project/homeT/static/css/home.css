@@ -37,7 +37,7 @@ h3{
 .h-item{
     display: flex;
     flex-direction: column;
-    border: 1px black solid;
+    border: 2.3px #3E3E63 solid;
     position: relative;
     width: 70%;
     height: 0;
