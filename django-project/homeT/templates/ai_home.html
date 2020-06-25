@@ -6,16 +6,22 @@
 <div class="right_part">
     <div><h3>인공지능과 함께 운동하기</h3></div>
     <div class="row-box">
+
         {% for video in AIList|slice:":2" %}
-        <div class=item>
+        <div class=item style=" text-align: center;" > <!-- 큰박스 -->
+
+            <!-- 영상 썸네일 -->
             <div class="video_thumbnail">
                 <a href="{% url 'aiDetail' video.id %}">
                     <img class="img" src="http://i.ytimg.com/vi/{{video.v_id}}/maxresdefault.jpg" alt="운동영상">
                 </a>
             </div>
+
+            <!-- 영상타이틀 -->
             <div class="video_title">
                 <p>{{video.title}}</p>
             </div>
+
         </div>
         {% endfor %}
         
