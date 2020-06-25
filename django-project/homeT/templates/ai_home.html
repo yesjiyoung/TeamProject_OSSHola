@@ -4,7 +4,7 @@
 
 <hr style="border: solid 20px white;">
 <div class="right_part">
-    <div><h3>인공지능과 함께 운동하기</h3></div>
+    <p class="this_font">인공지능과 함께 운동하기</p>
     <div class="row-box">
 
         {% for video in AIList|slice:":2" %}
@@ -19,7 +19,7 @@
 
             <!-- 영상타이틀 -->
             <div class="video_title">
-                <p>{{video.title}}</p>
+                <p style="font-size: 17px;">{{video.title}}</p>
             </div>
 
         </div>
@@ -38,7 +38,7 @@
                 </a>
             </div>
             <div class="video_title">
-                <p>{{video.title}}</p>
+                <p style="font-size: 17px;">{{video.title}}</p>
             </div>
         </div>
         {% endfor %}
