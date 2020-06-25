@@ -3,43 +3,59 @@
 {% block content %}
 
 <div class="detail_right_part">
-    <div class="main_video_box">
-        <hr style="border: solid 30px white;">
-        <iframe width="871" height="490" src="https://www.youtube.com/embed/{{detailObj.v_id}}" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="main_video_box" >
 
-        <div class="main_video_info">
-            <div class="info main_video_title">
+        
+        <hr style="border: solid 30px white;">
+
+
+        <div class="sizebig"style="border-right: solid 6px #3E3E63">
+            <!-- 영상 -->
+            <div class='showvideo'style="margin-right: 30px" >
+            <iframe width="871" height="490" src="https://www.youtube.com/embed/{{detailObj.v_id}}" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- 영상타이틀 -->
+            <div class="main_video_info">
+            <div class="info main_video_title" style="background-color: #d7d7f1">
                 <p>{{ detailObj.title}}</p>
             </div>
 
-            <div class="info heart">
+            <!-- 좋아요버튼 -->
+            <div class="info heart"  style="background-color: #d7d7f1">
                 <input type="button"
                     class="like-button {% if user in detailObj.like_user_set.all %} active {% else %} deactivate {% endif %}"
                     name="{{detailObj.id}}">
             </div>
 
-            <div class="info heart_count">
+            <!-- 좋아요count -->
+            <div class="info heart_count" style="background-color: #d7d7f1">
                 <p id="count-{{videoObj.id}}">{{ detailObj.like_count }}개</p>
             </div>
+
+            <br>
+            <hr style="border: solid 15px white;">
+        </div>
+        
         </div>
     </div>
 
     <div class="recc_video">
         <!-- 댓글 -->
         <div class="chat">
-            <div style="font-weight: bold; font-size: 25px;">댓글 작성</div>
+            <div style="font-weight: bold; font-size: 25px;">
+                <p class = "text_default" style="box-shadow:  0 .35em 0 0 #d7d7f1, 0 .35em 0 0 #d7d7f1; ;">댓글 작성</p></div>
             <div style="border: solid 10px white"></div>
             <!-- <hr style="border: solid 30px white;"> -->
 
             <form method="POST">
                 {% csrf_token %}
                 {{ comment_form.as_p }}
-                <input type="submit" value="submit" class="btn btn-outline-success">
+                <button type="submit" class="btn btn-secondary btn-lg" >Submit</button>
             </form>
         </div>
         <div style="border: solid 20px white"></div>
-        <div style="border: solid 1px #3E3E63;"></div>
+        <div style="background-color: #3E3E63; border: solid 3px #3E3E63 ; "></div>
         <div style="border: solid 20px white"></div>
         <!-- <hr style=" margin-right: 80px; margin-left: 20px;"> -->
         <div class="chat">
