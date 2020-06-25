@@ -30,6 +30,10 @@
             font-family: Nanum Gothic Coding, serif;
             font-size: 25px;
         }
+        .menu_font{
+            font-family: Nanum Gothic Coding, serif;
+            font-size: 20px;
+        }
         </style>
     
 </head>
@@ -62,7 +66,7 @@
                         {% if user.is_authenticated %}
                         <li><a href="javascript:{document.getElementById('logout').submit()}"
                                 style="font-size:20px;"><img src="{%static 'image/log-out.png'%}" width="25px"
-                                    height="25px">로그아웃</a></li>
+                                    height="25px"></a></li>
                         <form id="logout" method="POST" action="{% url 'logout' %}">
                             {% csrf_token %}
                             <input_type="hidden" />
@@ -72,8 +76,8 @@
                             <ul><br>
 
                                 {% else %}
-                                <li class="li"><a href="{% url 'signup' %}" style="font-family: 'Cafe24Dangdanghae'"><div style="font-size: 22px;">회원가입</div></a></li>
-                                <li class="li"><a href="{% url 'login' %}" style= "font-family: 'Cafe24Dangdanghae'"><div style="font-size: 22px;">로그인</div></a></li>
+                                <li class="li"><a href="{% url 'signup' %}" style="font-family: 'Cafe24Dangdanghae'"><div style="font-size: 22px;"><p class="menu_font">회원가입</p></div></a></li>
+                                <li class="li"><a href="{% url 'login' %}" style= "font-family: 'Cafe24Dangdanghae'"><div style="font-size: 22px;"><p class="menu_font">로그인</p></div></a></li>
                                 <li class="li"><a><img src="{%static 'image/profile.png'%}" width="30" height="30"></a>
 
                                     {% endif %}
@@ -92,13 +96,13 @@
                             <nav>
                                 <ul class="left_nav">
                                     <li class="left_nav_item">
-                                        <a href="{% url 'home' %}">HOME</a>
+                                        <a href="{% url 'home' %}"><p class="menu_font">____HOME____</p></a>
                                     </li>
                                     <li class="left_nav_item">
-                                        <a href="{% url 'aiHome' %}">인공지능트레이닝</a>
+                                        <a href="{% url 'aiHome' %}"><p class="menu_font">인공지능 트레이닝</p></a>
                                     </li>
                                     <li class="left_nav_item">
-                                        <a href="{% url 'popVideo' %}">인기동영상</a>
+                                        <a href="{% url 'popVideo' %}"><p class="menu_font">인기동영상</p></a>
                                         <!--인기동영상 화면으로 href-->
                                     </li>
                                     <!-- <li class="left_nav_item">
