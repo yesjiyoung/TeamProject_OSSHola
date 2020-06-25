@@ -4,6 +4,7 @@
 
 <div class="detail_right_part">
     <div class="main_video_box">
+        <hr style="border: solid 30px white;">
         <iframe width="871" height="490" src="https://www.youtube.com/embed/{{detailObj.v_id}}" frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -27,7 +28,9 @@
     <div class="recc_video">
         <!-- 댓글 -->
         <div class="chat">
-            <h1>댓글쓰기</h1>
+            <div style="font-weight: bold; font-size: 25px;">댓글 작성</div>
+            <div style="border: solid 10px white"></div>
+            <!-- <hr style="border: solid 30px white;"> -->
 
             <form method="POST">
                 {% csrf_token %}
@@ -35,8 +38,13 @@
                 <input type="submit" value="submit" class="btn btn-outline-success">
             </form>
         </div>
+        <div style="border: solid 20px white"></div>
+        <div style="border: solid 1px #3E3E63;"></div>
+        <div style="border: solid 20px white"></div>
+        <!-- <hr style=" margin-right: 80px; margin-left: 20px;"> -->
         <div class="chat">
-            <h1>댓글</h1>
+            <div style="font-weight: bold; font-size: 25px;">댓글</div>
+            <div style="border: solid 10px white"></div>
             <div class="main-comment-section"> {{ comments.count }} Comment{{ comments|pluralize }}
                 {% for comment in comments %}
                 <blockquote class="blockquote">
