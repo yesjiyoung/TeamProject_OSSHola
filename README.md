@@ -2,11 +2,11 @@
 
 한양대학교 ERICA 오픈소스 소프트웨어 개발 Hola 팀<br/>
 
-2019077183 이혜선 Project Manager, Backend-engineer
-2018042660 노지영 Backend-engineer
-2019044802 윤진난 Frontend-engineer
-2018042533 고유미 Frontend-engineer
-2017061044 유지건 Frontend-engineer
+2019077183 이혜선 Project Manager, Backend-engineer<br/>
+2018042660 노지영 Backend-engineer<br/>
+2019044802 윤진난 Frontend-engineer<br/>
+2018042533 고유미 Frontend-engineer<br/>
+2017061044 유지건 Frontend-engineer<br/>
 
 
 ## Getting Started
