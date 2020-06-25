@@ -1,17 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div style="color:cornflowerblue; text-align:center">
-    <h1 class='signup'>회원가입 완료</h1></div>
 
-<div style="text-align: center;">
-    <h3 class="signup" >회원가입이 정상적으로 이루어졌습니다.
-        가입한 아이디로 로그인을 다시 시도 해주세요.</h3></div> 
 
-<a href="{% url 'login' %}">
-    <button type="button" class="btn btn-primary" value="button">로그인</button>
-    
-</a>
+
+
+
+ <!--오른쪽 부분-->
+ <div class="right_part">
+    <!-- profile.help.setting 한번에 -->
+    <div class="section_set">
+        <ul>
+            <li class="on"><a href="{% url 'login' %}">Signup</a></li>
+        
+        </ul>
+        
+    </div>
+    <!-- profile -->
+    <div class="logcommon" style="font-family:'a옛날목욕탕L'">
+       
+        <div style="color:cornflowerblue; text-align:center">
+            <h1 class='signup'>회원가입 완료</h1></div>
+        
+        <div style="text-align: center;">
+            <h3 class="signup" >회원가입이 정상적으로 이루어졌습니다.
+                가입한 username으로 로그인을 다시 시도 해주세요.</h3></div>        
+         <center>
+         <div class='gologin'> 
+                
+         <a href="{% url 'login' %}">로그인하러 가기</a>
+        </div>   
+    </center>
+  </div>
 
 
 {% endblock %}
