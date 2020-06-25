@@ -3,10 +3,17 @@
 {% block content %}
 <!--오른쪽 부분-->
 
-<hr style="border: solid 20px white;">
+<!-- <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap');
+    .this_font{
+        font-family: Nanum Gothic Coding, serif;
+    }
+    </style> -->
+
 <div class="right_part">
     <div class="h-row-box cate_name">
-        <h3>인공지능과 함께 운동하기</h3>
+        <!-- <h3>인공지능과 함께 운동하기</h3> -->
+        <p class="this_font">인공지능</p>
     </div>
     <div class="h-row-box">
         {% for aiVideo in AIList %}
@@ -27,7 +34,7 @@
     <br>
     <hr style="border: solid 10px white;">
     <div class="h-row-box cate_name">
-        <h3>인기 동영상</h3>
+        <p class="this_font">인기동영상</p>
     </div>
     <div class="h-row-box">
         {% for video in VideoList|slice:":4" %}
