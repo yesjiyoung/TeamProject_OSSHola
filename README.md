@@ -54,5 +54,8 @@ If all went well then your command line prompt should now start with (venv).
 This will start the webserver on http://127.0.0.1:8000/
 
 
-## Service Introduction
+## Service Introduction -> See Wiki
+https://github.com/HyeseonLee/OSS_Hola/wiki/%EB%AC%B8%EC%84%9C%ED%99%94
+
 #### You can apply for this program if you want.
+
