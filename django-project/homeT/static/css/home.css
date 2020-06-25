@@ -1,4 +1,17 @@
+font-face { font-family: 'S-CoreDream-3Light'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; }
+font-face { font-family: 'Cafe24Dangdanghae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff'); font-weight: normal; font-style: normal; }
+font-face { font-family: 'Cafe24Ohsquare'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Cafe24Ohsquare.woff') format('woff'); font-weight: bold; font-style: normal; }
+
+
 /* 오른쪽 전체 파트 */
+
+h3{
+    font-family: 'Cafe24Dangdanghae', sans-serif;
+}
+
 .right_part{
     display: flex;
     flex-direction: column;
@@ -8,6 +21,7 @@
     margin: 15px 0 0 70px ;
     padding-right: 70px;
     overflow-y: scroll;
+    
 }
 .h-row-box{
     display: flex;
