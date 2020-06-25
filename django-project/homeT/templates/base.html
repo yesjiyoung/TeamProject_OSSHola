@@ -46,7 +46,7 @@
                     </form>
                 </div>
                 <!-- 오른쪽 -->
-                <div id='box-right' style="font-family:'a옛날목욕탕L'">
+                <div id='box-right' style="font-family: 'Handon3gyeopsal300g'">
                     <ul>
                         {% if user.is_authenticated %}
                         <li><a href="javascript:{document.getElementById('logout').submit()}"
@@ -61,8 +61,8 @@
                             <ul><br>
 
                                 {% else %}
-                                <li class="li"><a href="{% url 'signup' %}" style="font-family:'a옛날목욕탕L'">회원가입</a></li>
-                                <li class="li"><a href="{% url 'login' %}" style="font-family:'a옛날목욕탕L'">로그인</a></li>
+                                <li class="li"><a href="{% url 'signup' %}" style="font-family: 'Cafe24Dangdanghae'"><div style="font-size: 22px;">회원가입</div></a></li>
+                                <li class="li"><a href="{% url 'login' %}" style= "font-family: 'Cafe24Dangdanghae'"><div style="font-size: 22px;">로그인</div></a></li>
                                 <li class="li"><a><img src="{%static 'image/profile.png'%}" width="30" height="30"></a>
 
                                     {% endif %}
@@ -73,7 +73,7 @@
 
             <div class="content">
                 <!--왼쪽 부분(nav)-->
-                <div class="left_part" style="font-family:'a옛날목욕탕L'">
+                <div class="left_part" style="font-family: 'S-CoreDream-3Light'">
                     <div class="row">
                         <div class="column">
                         </div>
@@ -81,17 +81,17 @@
                             <nav>
                                 <ul class="left_nav">
                                     <li class="left_nav_item">
-                                        <a href="{% url 'home' %}">Home</a>
+                                        <a href="{% url 'home' %}">HOME</a>
                                     </li>
                                     <li class="left_nav_item">
-                                        <a href="{% url 'aiHome' %}">인공지능으로 운동 배우기</a>
+                                        <a href="{% url 'aiHome' %}">인공지능 함께 운동하기</a>
                                     </li>
                                     <li class="left_nav_item">
                                         <a href="{% url 'popVideo' %}">인기동영상</a>
                                         <!--인기동영상 화면으로 href-->
                                     </li>
-                                    <li class="left_nav_item">
-                                        <a href="#">My Page</a>
+                                    <!-- <li class="left_nav_item">
+                                        <a href="#">My Page</a> -->
                                         <!--마이페이지 화면으로 href-->
                                     </li>
                                 </ul>
