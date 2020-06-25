@@ -23,7 +23,7 @@
 
     <div class="p-video-box">
         <!-- 상체 -->
-        <div class="cate" id="UpperList">
+        <div class="cate default" id="UpperList">
             <div class="p-row-box">
                 {% for video in UpperList %}
                 <!--|slice:":4"-->
@@ -444,13 +444,18 @@
 
     // $(function() {
     //     $(window).load(function() {
-    //         $(".place").trigger("click");
-    //         $(".place_sub1").trigger("click");
+    //         $(".UpperList").trigger("click");
     //     });
 
     // });
 
     $(document).ready(function () {
+
+        // $(window).load(function() {
+        //     $(".UpperList").trigger("click");
+        // });
+
+
         $('#category_menu ul li').click(function () {
             $('.cate').css('display', 'none');
             var selected = $(this).attr('class');
