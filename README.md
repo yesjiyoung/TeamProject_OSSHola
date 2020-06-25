@@ -2,7 +2,7 @@
 
 한양대학교 ERICA 오픈소스 소프트웨어 개발 Hola 팀<br/>
 
-2019077183 이혜선 Project Manager
+2019077183 이혜선 Project Manager, Backend-engineer
 2018042660 노지영 Backend-engineer
 2019044802 윤진난 Frontend-engineer
 2018042533 고유미 Frontend-engineer
@@ -58,4 +58,4 @@ This will start the webserver on http://127.0.0.1:8000/
 https://github.com/HyeseonLee/OSS_Hola/wiki/%EB%AC%B8%EC%84%9C%ED%99%94
 
 #### You can apply for this program if you want.
-
+contact : hyesun1999@gmail.com
