@@ -6,7 +6,7 @@
     /* width: 900px; */
     height: calc(100%-110px);
     width: 100%;
-    margin: 15px 0 0 70px ;
+    margin: 15px 0 0 90px ;
     overflow-y: scroll;
 }
 
@@ -44,11 +44,11 @@
     background: url(../image/blank_heart2.png) no-repeat;
     background-size:100%;
     background-position: center;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border: 0;
     padding: 0;
-    margin: 0;
+    margin-left:20px;
 }
 .active{
     background: url(../image/full_heart.png) no-repeat;
@@ -64,6 +64,8 @@
 .heart_count{
     font-size: 20px;
     font-weight: bold;
+    padding-top: 40px;
+    
 }
 
 .info{
@@ -73,7 +75,8 @@
 .recc_video{
     display: flex;
     flex-direction: column;
-    border: 10px solid rgb(143, 195, 219);
-    padding: 10px 10px;
-    margin-right: 10px;
+    border-left: 3px groove solid #3E3E63;
+    padding: 10px 20px;
+    margin-left: 60px;
+    margin-top: 80px;
 }
