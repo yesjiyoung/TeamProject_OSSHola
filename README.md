@@ -6,7 +6,7 @@
 2018042660 노지영 Backend-engineer<br/>
 2019044802 윤진난 Frontend-engineer<br/>
 2018042533 고유미 Frontend-engineer<br/>
-2017061044 유지건 Frontend-engineer<br/>
+2017016044 유지건 Frontend-engineer<br/>
 
 
 ## Getting Started
