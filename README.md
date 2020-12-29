@@ -9,6 +9,7 @@
 2017016044 유지건 Frontend-engineer<br/>
 
 ## Process
+### You can directly check any step of the issues and projects through web addresss below. Clik it! :point_down:
 
 ### :star2:Issues
 Open : https://github.com/HyeseonLee/OSS_Hola/issues?q=is%3Aopen+is%3Aissue </br>
