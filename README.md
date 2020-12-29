@@ -8,6 +8,14 @@
 2018042533 고유미 Frontend-engineer<br/>
 2017016044 유지건 Frontend-engineer<br/>
 
+## Process
+
+### :star2:Issues
+Open : https://github.com/HyeseonLee/OSS_Hola/issues?q=is%3Aopen+is%3Aissue </br>
+Closed : https://github.com/HyeseonLee/OSS_Hola/issues?q=is%3Aissue+is%3Aclosed
+
+### :star2:Projects
+https://github.com/HyeseonLee/OSS_Hola/projects/1
 
 ## Getting Started
 
