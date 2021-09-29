@@ -7,16 +7,19 @@
 2019044802 윤진난 Frontend-engineer<br/>
 2018042533 고유미 Frontend-engineer<br/>
 2017016044 유지건 Frontend-engineer<br/>
-
+## Docs(wiki)
+📔 KR : https://github.com/HyeseonLee/OSS_Hola/wiki/ProjectWiki </br>
+📔 EN : https://github.com/HyeseonLee/OSS_Hola/wiki/%5BEng%5D-ProjectWiki
 ## Process
 ### You can directly check any step of the issues and projects through web addresss below. Clik it! :point_down:
+
+### :star2:Projects
+https://github.com/HyeseonLee/OSS_Hola/projects/1
 
 ### :star2:Issues
 Open : https://github.com/HyeseonLee/OSS_Hola/issues?q=is%3Aopen+is%3Aissue </br>
 Closed : https://github.com/HyeseonLee/OSS_Hola/issues?q=is%3Aissue+is%3Aclosed
 
-### :star2:Projects
-https://github.com/HyeseonLee/OSS_Hola/projects/1
 
 ## Getting Started
 
@@ -64,7 +67,7 @@ This will start the webserver on http://127.0.0.1:8000/
 
 
 ## Service Introduction -> See Wiki
-https://github.com/HyeseonLee/OSS_Hola/wiki/%EB%AC%B8%EC%84%9C%ED%99%94
+https://github.com/HyeseonLee/OSS_Hola/wiki/ProjectWiki
 
 #### You can apply for this program if you want.
 contact : hyesun1999@gmail.com
